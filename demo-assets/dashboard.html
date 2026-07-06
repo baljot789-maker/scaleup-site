@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Engine run: Bellhaven Wealth Advisors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --ink: #14161f;
+    --navy: #101b33;
+    --blue: #2545ff;
+    --red: #c92f2f;
+    --green: #1e7a46;
+    --line: #e4ded3;
+    --muted: #6b6f7c;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 24px;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--navy);
+  }
+  .top .run { color: var(--muted); font-size: 13px; }
+  .source {
+    background: var(--navy);
+    color: #f4f1ea;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .source strong { font-weight: 600; }
+  .source span { opacity: 0.75; font-size: 13px; }
+  h2 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 28px; }
+  th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  td { padding: 10px; border-bottom: 1px solid var(--line); }
+  td.name { font-weight: 500; }
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+  }
+  .badge.done { color: var(--green); border: 1px solid var(--green); }
+  .badge.review { color: var(--blue); border: 1px solid var(--blue); }
+  .check { color: var(--green); font-weight: 600; }
+  .flags { display: grid; gap: 10px; margin-bottom: 24px; }
+  .flag {
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--red);
+    border-radius: 6px;
+    padding: 12px 14px;
+    background: #fff;
+  }
+  .flag .kind { font-weight: 600; color: var(--red); font-size: 13px; }
+  .flag .fix { color: var(--green); font-size: 13px; margin-top: 4px; }
+  .flag .fix::before { content: "Resolved: "; font-weight: 600; }
+  .foot {
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="top">
+    <h1>Content Engine</h1>
+    <div class="run">Bellhaven Wealth Advisors · Run 14 · June 2026</div>
+  </div>
+
+  <div class="source">
+    <div><strong>Source:</strong> Expert interview, Priya Raman, Director of Financial Planning</div>
+    <span>42 min recording · transcript 6,180 words</span>
+  </div>
+
+  <h2>Assets produced from this interview</h2>
+  <table>
+    <thead>
+      <tr><th>Asset</th><th>Type</th><th>Compliance</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">The five years before retirement decide the thirty after</td><td>Blog post</td><td class="check">Passed</td><td><span class="badge done">Approved</span></td></tr>
+      <tr><td class="name">The five-year runway series (4 posts)</td><td>LinkedIn</td><td class="check">Passed</td><td><span class="badge done">Approved</span></td></tr>
+      <tr><td class="name">Runway checklist nurture (3 emails)</td><td>Email sequence</td><td class="check">Passed</td><td><span class="badge done">Approved</span></td></tr>
+      <tr><td class="name">Runway review landing page</td><td>Landing page</td><td class="check">Passed</td><td><span class="badge done">Approved</span></td></tr>
+      <tr><td class="name">Sequence risk explainer</td><td>Newsletter section</td><td class="check">Passed</td><td><span class="badge review">In review</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Compliance flags caught in the raw transcript</h2>
+  <div class="flags">
+    <div class="flag">
+      <div class="kind">Named client story</div>
+      <div>Transcript names a real client, her profession, and her town at 04:35.</div>
+      <div class="fix">rewritten as an anonymized composite with a privacy disclosure.</div>
+    </div>
+    <div class="flag">
+      <div class="kind">Performance claim</div>
+      <div>Specific return figure and a benchmark comparison at 05:04.</div>
+      <div class="fix">removed. Replaced with process language and the required disclosure.</div>
+    </div>
+    <div class="flag">
+      <div class="kind">Specific advice</div>
+      <div>Universal allocation and contribution advice given as a rule at 05:57.</div>
+      <div class="fix">reframed as education with a consult-your-advisor direction.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    Demonstration dashboard. Bellhaven Wealth Advisors is a fictional firm created for this sample; all names and details are invented.
+  </div>
+
+</body>
+</html>

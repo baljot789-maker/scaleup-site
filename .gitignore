@@ -1,0 +1,7 @@
+# local tooling and OS cruft
+.claude/
+.DS_Store
+
+# private working notes, not for the public repo
+CLAUDE.md
+PARKING-LOT.md

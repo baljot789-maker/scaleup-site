@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The five-year runway checklist | Bellhaven Wealth Advisors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f5ef;
+    --pine: #16352a;
+    --pine-deep: #0e241c;
+    --brass: #b08d3f;
+    --ink: #1c1e1a;
+    --muted: #5f6660;
+    --line: #ddd8ca;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Geist", system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  .demo-note {
+    background: var(--ink);
+    color: #f0ede4;
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6vw;
+    border-bottom: 1px solid var(--line);
+  }
+  .wordmark {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--pine);
+  }
+  header a.call {
+    color: var(--pine);
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--brass);
+    padding-bottom: 1px;
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    padding: 64px 6vw 72px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  .kicker {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: clamp(30px, 4.5vw, 44px);
+    line-height: 1.12;
+    color: var(--pine);
+    margin-bottom: 18px;
+  }
+  .hero p.lead { font-size: 17px; max-width: 46ch; margin-bottom: 24px; }
+  ul.covers { list-style: none; margin-bottom: 8px; }
+  ul.covers li {
+    padding-left: 26px;
+    position: relative;
+    margin-bottom: 12px;
+    max-width: 48ch;
+  }
+  ul.covers li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 9px;
+    width: 12px; height: 3px;
+    background: var(--brass);
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 28px;
+  }
+  .card h2 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--pine);
+    margin-bottom: 6px;
+  }
+  .card p { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  input {
+    width: 100%;
+    padding: 11px 12px;
+    font: inherit;
+    font-size: 14px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--paper);
+    margin-bottom: 16px;
+  }
+  input:focus { outline: 2px solid var(--pine); outline-offset: 1px; }
+  button {
+    width: 100%;
+    padding: 13px;
+    font: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    color: #f4f1e8;
+    background: var(--pine);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 180ms ease;
+  }
+  button:hover { background: var(--pine-deep); }
+  button:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+  .fine { font-size: 12px; color: var(--muted); margin-top: 12px; }
+  .quotebar {
+    background: var(--pine);
+    color: #eef0e9;
+    padding: 48px 6vw;
+  }
+  .quotebar blockquote {
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: "Fraunces", serif;
+    font-size: clamp(20px, 2.6vw, 26px);
+    line-height: 1.35;
+  }
+  .quotebar cite {
+    display: block;
+    font-family: "Geist", sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    opacity: 0.7;
+    margin-top: 14px;
+  }
+  footer {
+    padding: 28px 6vw 40px;
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; padding-top: 40px; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="demo-note">Sample output for demonstration. Bellhaven Wealth Advisors is a fictional firm.</div>
+
+  <header>
+    <div class="wordmark">Bellhaven</div>
+    <a class="call" href="#">Book a runway review</a>
+  </header>
+
+  <main class="hero">
+    <div>
+      <div class="kicker">Free checklist</div>
+      <h1>The five-year runway: what to check before you retire</h1>
+      <p class="lead">The five years on either side of your retirement date decide more than the twenty before them. This checklist walks you through the numbers that matter while there's still time to act on them.</p>
+      <ul class="covers">
+        <li>The two spending numbers to write down before you look at your portfolio</li>
+        <li>How to tell whether your balance is a plan or just a market</li>
+        <li>Sequence risk in plain terms, and why timing changes everything</li>
+        <li>The three-bucket spending plan that gives your money a job</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Get the checklist</h2>
+      <p>One PDF, eight pages. We'll also send three short emails that walk through it. Unsubscribe anytime.</p>
+      <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Demo form: nothing was sent';">
+        <label for="name">First name</label>
+        <input id="name" type="text" autocomplete="given-name">
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="email">
+        <button type="submit">Send me the checklist</button>
+      </form>
+      <p class="fine">We never share your email. This is a demonstration page; the form doesn't submit.</p>
+    </div>
+  </main>
+
+  <section class="quotebar">
+    <blockquote>
+      "When people are anxious about the market, nine times out of ten it's because their money doesn't have a job description yet."
+      <cite>Priya Raman, Director of Financial Planning</cite>
+    </blockquote>
+  </section>
+
+  <footer>
+    Bellhaven Wealth Advisors is a registered investment adviser. This material is for general information only and is not investment, tax, or legal advice. Past performance does not guarantee future results. Demonstration page: Bellhaven is a fictional firm created for this sample and all names are invented.
+  </footer>
+
+</body>
+</html>
