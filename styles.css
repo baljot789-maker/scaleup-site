@@ -781,6 +781,59 @@ mark {
 }
 .demo-banner strong { color: var(--ink); font-weight: 600; }
 
+/* ---------- build library ---------- */
+
+.builds { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+
+.build-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px 24px 18px;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.build-card:hover { border-color: var(--navy); transform: translateY(-2px); }
+
+.build-card h3 { font-size: 19px; margin-bottom: 6px; }
+.build-card p.what { font-size: 15px; color: var(--ink); margin-bottom: 14px; }
+
+.build-card svg { width: 100%; height: auto; display: block; margin-bottom: 14px; }
+
+.build-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  font-size: 12.5px;
+}
+
+.build-meta span {
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 3px 11px;
+  color: var(--muted);
+}
+
+.build-meta span.live { color: var(--blue); border-color: var(--blue); font-weight: 600; }
+
+/* diagram parts specific to the build library */
+.b-fill { fill: var(--navy); }
+.b-open { fill: #fff; stroke: var(--navy); stroke-width: 1.5; }
+.b-ghost { fill: none; stroke: var(--muted); stroke-width: 1.4; stroke-dasharray: 5 4; }
+.b-live { fill: var(--blue); }
+.b-good { fill: none; stroke: var(--green); stroke-width: 2; }
+.b-bad { fill: none; stroke: var(--red); stroke-width: 2; }
+.b-badfill { fill: var(--red); }
+.b-t {
+  fill: var(--muted);
+  font-family: var(--body);
+  font-size: 11px;
+}
+.b-t-dark { fill: var(--ink); font-family: var(--body); font-size: 11px; font-weight: 500; }
+.b-t-inv { fill: #fff; font-family: var(--body); font-size: 10.5px; font-weight: 500; }
+
 /* ---------- cta band ---------- */
 
 .cta-band {
@@ -869,7 +922,7 @@ mark {
 }
 
 @media (max-width: 900px) {
-  .tiers, .delivs, .own { grid-template-columns: 1fr; }
+  .tiers, .delivs, .own, .builds { grid-template-columns: 1fr; }
   .tier--featured { order: -1; }
   .strip { grid-template-columns: 1fr; }
   .guide { padding: 34px 28px; }

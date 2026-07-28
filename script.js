@@ -12,7 +12,7 @@
   };
 
   var pending = [].slice.call(
-    document.querySelectorAll("[data-animate], .pipeline-svg, .mini-diagram svg, .timemap, .strip")
+    document.querySelectorAll("[data-animate], .pipeline-svg, .mini-diagram svg, .build-card svg, .timemap, .strip")
   );
 
   if (reduced) {
