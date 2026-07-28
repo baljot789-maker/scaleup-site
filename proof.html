@@ -14,8 +14,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
-<script src="script.js?v=4" defer></script>
+<link rel="stylesheet" href="styles.css?v=5">
+<script src="script.js?v=5" defer></script>
 </head>
 <body>
 
@@ -24,6 +24,7 @@
   <nav class="nav-links" aria-label="Main">
     <a href="how-it-works.html">How it works</a>
     <a href="proof.html" aria-current="page">What you get</a>
+    <a href="examples.html">Example fixes</a>
     <a class="btn" href="book.html">Book 15 minutes</a>
   </nav>
 </header>
@@ -114,275 +115,14 @@
     <p class="figure-note">Settles the question "I'd have to sell this internally and I don't have the time."</p>
   </section>
 
-  <!-- the build -->
-  <section class="module" data-animate>
-    <span class="module-tag">If you build it</span>
-    <h2>Spec 01, built and running</h2>
-    <p class="intro">This is what the top item on the kill list looks like once it exists. One 42-minute interview goes in. A blog post, a four-post social series, an email sequence, and a landing page come out, with the compliance problems caught before a reviewer sees them.</p>
 
-    <div class="mini-diagram">
-      <svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a 42-minute interview flows through the brand and compliance layer into four finished assets.">
-        <rect class="d-dash" x="10" y="80" width="160" height="60" rx="10"/>
-        <text class="d-label" x="90" y="115" text-anchor="middle">42-min interview</text>
-        <path class="p-path" style="--i:0" pathLength="1" d="M170,110 C220,110 230,110 278,110"/>
-        <rect class="d-block" x="280" y="55" width="180" height="110" rx="12"/>
-        <text class="d-blocktext" x="370" y="98" text-anchor="middle">your brand · your rules</text>
-        <text class="d-blocktext" x="370" y="122" text-anchor="middle">your voice</text>
-        <path class="p-path" style="--i:1" pathLength="1" d="M460,110 C540,110 550,35 600,35"/>
-        <path class="p-path" style="--i:2" pathLength="1" d="M460,110 C540,110 550,85 600,85"/>
-        <path class="p-path" style="--i:3" pathLength="1" d="M460,110 C540,110 550,135 600,135"/>
-        <path class="p-path" style="--i:4" pathLength="1" d="M460,110 C540,110 550,185 600,185"/>
-        <circle class="p-node" style="--i:1" cx="610" cy="35" r="6"/>
-        <circle class="p-node" style="--i:2" cx="610" cy="85" r="6"/>
-        <circle class="p-node" style="--i:3" cx="610" cy="135" r="6"/>
-        <circle class="p-node" style="--i:4" cx="610" cy="185" r="6"/>
-        <text class="p-label" style="--i:1" x="626" y="40">blog post</text>
-        <text class="p-label" style="--i:2" x="626" y="90">social series</text>
-        <text class="p-label" style="--i:3" x="626" y="140">email sequence</text>
-        <text class="p-label" style="--i:4" x="626" y="190">landing page</text>
-      </svg>
+  <section class="block">
+    <div class="section-head">
+      <h2>Then you decide what to build</h2>
+      <p>The documents above are yours whatever you do next. If you want the top item built, that gets scoped after you have read them, never before.</p>
     </div>
-    <p class="diagram-hint">Slide sideways to see the full diagram.</p>
-
-    <div class="strip" id="strip">
-      <div class="pane raw">
-        <div class="pane-head"><span class="dot red"></span> What the expert said</div>
-        <p>…take <mark class="prob" style="--i:0">Susan Whitfield. She's a dentist up in Naperville</mark>, owns her practice, and she came to us last spring convinced she was fine… We moved her onto our balanced model, which, I mean, <mark class="prob" style="--i:1">it did fourteen percent last year, we beat the S&amp;P</mark> doing it with less risk… Look, I'll just say it plainly. <mark class="prob" style="--i:2">If you're within five years of retiring, you should have at least thirty percent in bonds.</mark> Full stop.</p>
-      </div>
-      <div class="pane pub">
-        <div class="pane-head"><span class="dot green"></span> What reached the reviewer</div>
-        <p><mark class="fix" style="--i:0">One client, the owner of a dental practice in the Chicago suburbs (details changed for privacy)</mark>, came in convinced she was set because her account had doubled in six years.</p>
-        <p><mark class="fix" style="--i:1">We can't tell you what markets will do next year. No one can.</mark> What a plan can do is make sure no single bad year gets to decide how you live.</p>
-        <p><mark class="fix" style="--i:2">There is no universal split that fits everyone. That's a conversation with an advisor who knows your numbers</mark>, not a rule you apply from a blog post.</p>
-      </div>
-    </div>
-    <div class="strip-legend">
-      <span><span class="dot red"></span> a named client, a performance claim, and universal advice: three ways a draft gets killed in review</span>
-      <span><span class="dot green"></span> caught and fixed before review</span>
-    </div>
-
-    <iframe class="frame" src="demo-assets/dashboard.html" title="Content engine run record for the sample interview" loading="lazy"></iframe>
-    <p class="frame-caption">
-      <span>The run record your team would see.</span>
-      <a class="textlink" href="demo-assets/sample-landing-page.html" target="_blank" rel="noopener">Open the landing page it produced</a>
-    </p>
-
-    <div class="video-slot" data-animate>
-      <div class="tri" aria-hidden="true"></div>
-      <span>A 90-second screen recording of this run is being edited. It will live here.</span>
-    </div>
+    <p><a class="textlink" href="examples.html">See the systems that come off a teardown</a></p>
   </section>
-
-  <!-- build library -->
-  <section class="module" data-animate>
-    <span class="module-tag">The build library</span>
-    <h2>What tends to end up on the list</h2>
-    <p class="intro">Teardowns keep surfacing the same shapes. Here they are, drawn as they work, with rough hours and build effort. The content engine above is the one with a working demo you can open. The rest get built to spec once your teardown says they earn their place, and your ranked list decides the order.</p>
-
-    <div class="builds">
-
-      <div class="build-card" data-animate style="--d:0">
-        <h3>Interview to content</h3>
-        <p class="what">One recorded conversation becomes every channel's version of it, compliance-checked first.</p>
-        <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One input fans out into four finished assets.">
-          <rect class="b-ghost" x="6" y="57" width="66" height="36" rx="6"/>
-          <text class="b-t-dark" x="39" y="79" text-anchor="middle">interview</text>
-          <path class="p-path" style="--i:0" pathLength="1" d="M72,75 L106,75"/>
-          <rect class="b-fill" x="108" y="52" width="76" height="46" rx="8"/>
-          <text class="b-t-inv" x="146" y="72" text-anchor="middle">your rules</text>
-          <text class="b-t-inv" x="146" y="86" text-anchor="middle">your voice</text>
-          <path class="p-path" style="--i:1" pathLength="1" d="M184,75 C220,75 224,26 252,26"/>
-          <path class="p-path" style="--i:2" pathLength="1" d="M184,75 C220,75 224,59 252,59"/>
-          <path class="p-path" style="--i:3" pathLength="1" d="M184,75 C220,75 224,92 252,92"/>
-          <path class="p-path" style="--i:4" pathLength="1" d="M184,75 C220,75 224,125 252,125"/>
-          <circle class="p-node" style="--i:1" cx="256" cy="26" r="4"/>
-          <circle class="p-node" style="--i:2" cx="256" cy="59" r="4"/>
-          <circle class="p-node" style="--i:3" cx="256" cy="92" r="4"/>
-          <circle class="p-node" style="--i:4" cx="256" cy="125" r="4"/>
-          <text class="b-t" x="266" y="30">blog post</text>
-          <text class="b-t" x="266" y="63">social series</text>
-          <text class="b-t" x="266" y="96">emails</text>
-          <text class="b-t" x="266" y="129">landing page</text>
-        </svg>
-        <div class="build-meta"><span class="live">Working demo above</span><span>~9.5 hrs/wk</span><span>Small build</span></div>
-      </div>
-
-      <div class="build-card" data-animate style="--d:1">
-        <h3>Compliance pre-check</h3>
-        <p class="what">Drafts get screened before they enter the review queue, so reviewers stop catching the same three mistakes.</p>
-        <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Drafts pass through a screen; clean ones continue to review, flagged ones are held.">
-          <text class="b-t" x="8" y="20">drafts in</text>
-          <rect class="b-open" x="6" y="28" width="46" height="24" rx="4"/>
-          <rect class="b-open" x="6" y="60" width="46" height="24" rx="4"/>
-          <rect class="b-open" x="6" y="92" width="46" height="24" rx="4"/>
-          <path class="p-path" style="--i:0" pathLength="1" d="M52,40 L96,66"/>
-          <path class="p-path" style="--i:0" pathLength="1" d="M52,72 L96,73"/>
-          <path class="p-path" style="--i:0" pathLength="1" d="M52,104 L96,80"/>
-          <rect class="b-fill" x="98" y="46" width="58" height="54" rx="8"/>
-          <text class="b-t-inv" x="127" y="77" text-anchor="middle">screen</text>
-          <path class="p-path" style="--i:2" pathLength="1" d="M156,62 L206,42"/>
-          <rect class="b-open" x="208" y="24" width="74" height="36" rx="5"/>
-          <path class="b-good" d="M216,42 l6,7 l11,-13"/>
-          <text class="b-t-dark" x="240" y="47">to review</text>
-          <path class="p-path" style="--i:3" pathLength="1" d="M156,88 L206,114"/>
-          <rect x="208" y="96" width="74" height="36" rx="5" fill="#fff" stroke="#c92f2f" stroke-width="1.5"/>
-          <circle class="b-badfill" cx="222" cy="114" r="5"/>
-          <text class="b-t-dark" x="234" y="118">held back</text>
-        </svg>
-        <div class="build-meta"><span>~8 hrs/wk</span><span>Small build</span></div>
-      </div>
-
-      <div class="build-card" data-animate style="--d:2">
-        <h3>The monthly report</h3>
-        <p class="what">Numbers pulled from every tool and assembled into the format leadership already reads.</p>
-        <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four data sources converge into one assembled report.">
-          <rect class="b-open" x="6" y="12" width="72" height="24" rx="4"/>
-          <text class="b-t-dark" x="42" y="28" text-anchor="middle">analytics</text>
-          <rect class="b-open" x="6" y="48" width="72" height="24" rx="4"/>
-          <text class="b-t-dark" x="42" y="64" text-anchor="middle">email tool</text>
-          <rect class="b-open" x="6" y="84" width="72" height="24" rx="4"/>
-          <text class="b-t-dark" x="42" y="100" text-anchor="middle">CRM</text>
-          <rect class="b-open" x="6" y="120" width="72" height="24" rx="4"/>
-          <text class="b-t-dark" x="42" y="136" text-anchor="middle">ad platform</text>
-          <path class="p-path" style="--i:0" pathLength="1" d="M78,24 C130,24 132,70 168,74"/>
-          <path class="p-path" style="--i:1" pathLength="1" d="M78,60 C130,60 132,72 168,75"/>
-          <path class="p-path" style="--i:2" pathLength="1" d="M78,96 C130,96 132,80 168,77"/>
-          <path class="p-path" style="--i:3" pathLength="1" d="M78,132 C130,132 132,82 168,78"/>
-          <circle class="b-live" cx="172" cy="76" r="5"/>
-          <path class="p-path" style="--i:4" pathLength="1" d="M177,76 L198,76"/>
-          <rect class="b-open" x="200" y="38" width="82" height="76" rx="6"/>
-          <rect x="212" y="52" width="58" height="5" rx="2" fill="#e5dfd3"/>
-          <rect x="212" y="65" width="46" height="5" rx="2" fill="#e5dfd3"/>
-          <rect x="212" y="78" width="54" height="5" rx="2" fill="#e5dfd3"/>
-          <rect x="212" y="91" width="34" height="5" rx="2" fill="#2545ff"/>
-          <text class="b-t" x="241" y="128" text-anchor="middle">one report, on time</text>
-        </svg>
-        <div class="build-meta"><span>~7 hrs/wk</span><span>Medium build</span></div>
-      </div>
-
-      <div class="build-card" data-animate style="--d:3">
-        <h3>Feedback routing</h3>
-        <p class="what">Tickets, call notes, and survey text sorted and sent to whichever desk owns the answer.</p>
-        <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Customer feedback is read and routed along separate lanes to four teams.">
-          <rect class="b-ghost" x="6" y="57" width="68" height="36" rx="6"/>
-          <text class="b-t-dark" x="40" y="79" text-anchor="middle">feedback</text>
-          <path class="p-path" style="--i:0" pathLength="1" d="M74,75 L104,75"/>
-          <rect class="b-fill" x="106" y="55" width="64" height="40" rx="6"/>
-          <text class="b-t-inv" x="138" y="79" text-anchor="middle">sort</text>
-          <path class="p-path" style="--i:1" pathLength="1" d="M170,75 L192,75 L192,22 L236,22"/>
-          <path class="p-path" style="--i:2" pathLength="1" d="M170,75 L206,75 L206,57 L236,57"/>
-          <path class="p-path" style="--i:3" pathLength="1" d="M170,75 L206,75 L206,93 L236,93"/>
-          <path class="p-path" style="--i:4" pathLength="1" d="M170,75 L192,75 L192,128 L236,128"/>
-          <rect class="p-node" style="--i:1" x="238" y="17" width="10" height="10" rx="2"/>
-          <rect class="p-node" style="--i:2" x="238" y="52" width="10" height="10" rx="2"/>
-          <rect class="p-node" style="--i:3" x="238" y="88" width="10" height="10" rx="2"/>
-          <rect class="p-node" style="--i:4" x="238" y="123" width="10" height="10" rx="2"/>
-          <text class="b-t" x="256" y="26">product</text>
-          <text class="b-t" x="256" y="61">support</text>
-          <text class="b-t" x="256" y="97">marketing</text>
-          <text class="b-t" x="256" y="132">leadership</text>
-        </svg>
-        <div class="build-meta"><span>~6 hrs/wk</span><span>Medium build</span></div>
-      </div>
-
-      <div class="build-card" data-animate style="--d:4">
-        <h3>Research and analysis</h3>
-        <p class="what">A question in, a findings memo out, with every claim carrying the source it came from.</p>
-        <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A question gathers multiple sources and returns a memo with citations attached.">
-          <circle class="b-open" cx="112" cy="22" r="9"/>
-          <circle class="b-open" cx="146" cy="16" r="9"/>
-          <circle class="b-open" cx="180" cy="22" r="9"/>
-          <text class="b-t" x="196" y="20">sources</text>
-          <path class="p-path" style="--i:0" pathLength="1" d="M112,31 C112,52 130,54 143,58"/>
-          <path class="p-path" style="--i:1" pathLength="1" d="M146,25 C146,45 146,50 146,58"/>
-          <path class="p-path" style="--i:2" pathLength="1" d="M180,31 C180,52 162,54 149,58"/>
-          <rect class="b-ghost" x="6" y="66" width="62" height="34" rx="6"/>
-          <text class="b-t-dark" x="37" y="87" text-anchor="middle">question</text>
-          <path class="p-path" style="--i:0" pathLength="1" d="M68,83 L108,83"/>
-          <rect class="b-fill" x="110" y="60" width="74" height="46" rx="8"/>
-          <text class="b-t-inv" x="147" y="88" text-anchor="middle">gather</text>
-          <path class="p-path" style="--i:3" pathLength="1" d="M184,83 L206,83"/>
-          <rect class="b-open" x="208" y="46" width="80" height="74" rx="6"/>
-          <rect x="220" y="60" width="56" height="5" rx="2" fill="#e5dfd3"/>
-          <rect x="220" y="73" width="44" height="5" rx="2" fill="#e5dfd3"/>
-          <rect x="220" y="86" width="52" height="5" rx="2" fill="#e5dfd3"/>
-          <path class="b-good" d="M221,104 l4,5 l8,-9"/>
-          <path class="b-good" d="M239,104 l4,5 l8,-9"/>
-          <path class="b-good" d="M257,104 l4,5 l8,-9"/>
-          <text class="b-t" x="248" y="136" text-anchor="middle">memo, sources attached</text>
-        </svg>
-        <div class="build-meta"><span>Varies by question</span><span>Medium build</span></div>
-      </div>
-
-      <div class="build-card" data-animate style="--d:5">
-        <h3>Channel reformatting</h3>
-        <p class="what">One approved asset reshaped for every place it has to run, without a manual rewrite each time.</p>
-        <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One approved asset is reshaped into three differently shaped outputs.">
-          <rect class="b-fill" x="16" y="52" width="56" height="46" rx="6"/>
-          <text class="b-t-inv" x="44" y="79" text-anchor="middle">approved</text>
-          <path class="p-path" style="--i:0" pathLength="1" d="M72,75 L112,75"/>
-          <circle class="b-live" cx="118" cy="75" r="5"/>
-          <path class="p-path" style="--i:1" pathLength="1" d="M123,75 C146,75 148,30 168,30"/>
-          <path class="p-path" style="--i:2" pathLength="1" d="M123,75 C146,75 148,80 168,80"/>
-          <path class="p-path" style="--i:3" pathLength="1" d="M123,75 C146,75 148,124 168,124"/>
-          <rect class="b-open" x="170" y="16" width="110" height="28" rx="4"/>
-          <text class="b-t" x="225" y="34" text-anchor="middle">wide banner</text>
-          <rect class="b-open" x="170" y="56" width="48" height="48" rx="4"/>
-          <text class="b-t" x="194" y="84" text-anchor="middle">square</text>
-          <rect class="b-open" x="228" y="52" width="30" height="56" rx="4"/>
-          <text class="b-t" x="243" y="84" text-anchor="middle">tall</text>
-          <rect class="b-open" x="170" y="112" width="82" height="24" rx="4"/>
-          <text class="b-t" x="211" y="128" text-anchor="middle">plain text</text>
-        </svg>
-        <div class="build-meta"><span>~4 hrs/wk</span><span>Larger build</span></div>
-      </div>
-
-      <div class="build-card" data-animate style="--d:6">
-        <h3>Ad variant generation</h3>
-        <p class="what">One concept becomes a set of testable variants that all still sound like your firm.</p>
-        <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One concept multiplies into a grid of six testable variants.">
-          <rect class="b-fill" x="10" y="54" width="66" height="42" rx="6"/>
-          <text class="b-t-inv" x="43" y="79" text-anchor="middle">one concept</text>
-          <path class="p-path" style="--i:0" pathLength="1" d="M76,75 L116,75"/>
-          <rect class="p-node" style="--i:1" x="128" y="26" width="46" height="34" rx="4"/>
-          <rect class="p-node" style="--i:2" x="182" y="26" width="46" height="34" rx="4"/>
-          <rect class="p-node" style="--i:3" x="236" y="26" width="46" height="34" rx="4"/>
-          <rect class="p-node" style="--i:4" x="128" y="68" width="46" height="34" rx="4"/>
-          <rect class="p-node" style="--i:5" x="182" y="68" width="46" height="34" rx="4"/>
-          <rect class="p-node" style="--i:6" x="236" y="68" width="46" height="34" rx="4"/>
-          <text class="b-t" x="205" y="124" text-anchor="middle">variants ready to test</text>
-        </svg>
-        <div class="build-meta"><span>Depends on volume</span><span>Small build</span></div>
-      </div>
-
-      <div class="build-card" data-animate style="--d:7">
-        <h3>Inbound triage</h3>
-        <p class="what">New inquiries read, ranked, and split so the ones worth a call today get one today.</p>
-        <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Incoming inquiries are scored and split into a call-now lane and a nurture lane.">
-          <text class="b-t" x="8" y="22">inbound</text>
-          <rect class="b-open" x="6" y="30" width="62" height="14" rx="3"/>
-          <rect class="b-open" x="6" y="50" width="62" height="14" rx="3"/>
-          <rect class="b-open" x="6" y="70" width="62" height="14" rx="3"/>
-          <rect class="b-open" x="6" y="90" width="62" height="14" rx="3"/>
-          <rect class="b-open" x="6" y="110" width="62" height="14" rx="3"/>
-          <path class="p-path" style="--i:0" pathLength="1" d="M68,75 L100,75"/>
-          <rect class="b-fill" x="102" y="55" width="58" height="40" rx="6"/>
-          <text class="b-t-inv" x="131" y="79" text-anchor="middle">score</text>
-          <path class="p-path" style="--i:1" pathLength="1" d="M160,66 L196,44"/>
-          <path class="p-path" style="--i:2" pathLength="1" d="M160,86 L196,110"/>
-          <rect class="b-live" x="198" y="26" width="94" height="36" rx="5"/>
-          <text class="b-t-inv" x="245" y="48" text-anchor="middle">call today</text>
-          <rect class="b-open" x="198" y="92" width="94" height="36" rx="5"/>
-          <text class="b-t-dark" x="245" y="114" text-anchor="middle">nurture track</text>
-        </svg>
-        <div class="build-meta"><span>Varies by volume</span><span>Medium build</span></div>
-      </div>
-
-    </div>
-
-    <p class="figure-note">Hours are illustrative, drawn from the sample teardown rather than a client result. Your own numbers replace them, and a system that would not earn its build cost gets cut from your list instead of sold to you.</p>
-  </section>
-
 </main>
 
 <section class="cta-band">
