@@ -39,6 +39,41 @@
     sweep();
   }
 
+  /* index: cost of inaction. Published averages against their headcount.
+     10.2 hrs/week is DoubleVerify's 2025 measured average for routine manual work;
+     48 weeks and the default rate reproduce their own ~$17k per person figure. */
+  var HRS_PER_WEEK = 10.2;
+  var WORK_WEEKS = 48;
+  var sizeButtons = document.querySelectorAll(".sizes button");
+  var rateInput = document.getElementById("rate");
+  var outHours = document.getElementById("calcHours");
+  var outMoney = document.getElementById("calcMoney");
+
+  if (sizeButtons.length && rateInput && outHours && outMoney) {
+    var heads = 5;
+
+    var recalc = function () {
+      var rate = parseFloat(rateInput.value);
+      if (!isFinite(rate) || rate <= 0) rate = 0;
+      var hours = heads * HRS_PER_WEEK * WORK_WEEKS;
+      outHours.textContent = Math.round(hours).toLocaleString("en-US");
+      outMoney.textContent = "$" + Math.round(hours * rate).toLocaleString("en-US");
+    };
+
+    sizeButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        heads = parseFloat(btn.getAttribute("data-heads"));
+        sizeButtons.forEach(function (b) {
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+        recalc();
+      });
+    });
+
+    rateInput.addEventListener("input", recalc);
+    recalc();
+  }
+
   /* index: rotating input label on the pipeline diagram. */
   var labels = ["one expert interview", "one video", "customer feedback"];
   var inputs = document.querySelectorAll(".p-input-label");
