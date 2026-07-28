@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool audit: Bellhaven Wealth Advisors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f1; --ink: #16181f; --navy: #0d1730; --blue: #2545ff;
+    --line: #e5dfd3; --muted: #5c6170; --green: #1e7a46; --red: #c92f2f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 14px; line-height: 1.5; padding: 24px;
+  }
+  .top {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 8px;
+    border-bottom: 2px solid var(--navy); padding-bottom: 14px; margin-bottom: 18px;
+  }
+  h1 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 20px; color: var(--navy); }
+  .top .run { color: var(--muted); font-size: 13px; }
+  .note {
+    background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--muted);
+    border-radius: 6px; padding: 12px 16px; font-size: 13px; color: var(--muted); margin-bottom: 22px;
+  }
+  .headline {
+    background: var(--navy); color: #eef0f6; border-radius: 10px;
+    padding: 20px 24px; margin-bottom: 24px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
+  }
+  .headline strong { color: #fff; font-family: "Bricolage Grotesque", sans-serif; font-size: 15px; display: block; }
+  .headline p { color: #b9c1d6; font-size: 13px; margin-top: 4px; }
+  .headline .amt {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800;
+    font-size: 34px; color: #fff; line-height: 1; white-space: nowrap;
+  }
+  .headline .amt span { display: block; font-size: 12px; font-family: "Geist", sans-serif; font-weight: 400; color: #b9c1d6; margin-top: 4px; }
+  h2 {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 10px;
+  }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 26px; }
+  th {
+    text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); font-weight: 500; padding: 8px 10px; border-bottom: 1px solid var(--line);
+  }
+  th.n, td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  td { padding: 11px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.name { font-weight: 600; }
+  td.name small { display: block; font-weight: 400; color: var(--muted); margin-top: 3px; font-size: 12.5px; }
+  .verdict { font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 99px; border: 1px solid; white-space: nowrap; }
+  .verdict.keep { color: var(--green); border-color: var(--green); }
+  .verdict.cancel { color: var(--red); border-color: var(--red); }
+  .verdict.watch { color: var(--blue); border-color: var(--blue); }
+  .foot { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 12px; }
+</style>
+</head>
+<body>
+
+  <div class="top">
+    <h1>The tool audit</h1>
+    <div class="run">Bellhaven Wealth Advisors · Teardown · Deliverable 04</div>
+  </div>
+
+  <div class="note">
+    <strong>Demonstration document.</strong> Bellhaven Wealth Advisors is a fictional firm and the tools below are generic categories, not named vendors. Every figure is illustrative.
+  </div>
+
+  <div class="headline">
+    <div>
+      <strong>Annual spend you can stop</strong>
+      <p>Two subscriptions cover work another tool already does, and one seat block goes unused.</p>
+    </div>
+    <div class="amt">$14,280<span>per year</span></div>
+  </div>
+
+  <h2>Current subscriptions</h2>
+  <table>
+    <thead>
+      <tr><th>Tool</th><th class="n">Annual</th><th class="n">Seats used</th><th>Verdict</th><th>Cancel by</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name">Content scheduling platform<small>Overlaps entirely with the scheduler already inside your CMS.</small></td>
+        <td class="n">$5,400</td><td class="n">3 of 8</td>
+        <td><span class="verdict cancel">Cancel</span></td><td>Mar 14</td>
+      </tr>
+      <tr>
+        <td class="name">Standalone AI writing tool<small>No compliance rule support. Every draft goes through full review anyway, so it saves nothing downstream.</small></td>
+        <td class="n">$4,680</td><td class="n">6 of 6</td>
+        <td><span class="verdict cancel">Cancel</span></td><td>Renewal date, Jun 2</td>
+      </tr>
+      <tr>
+        <td class="name">Analytics suite, upper tier<small>Downgrade one tier. The features driving the upgrade have not been opened in eleven months.</small></td>
+        <td class="n">$4,200</td><td class="n">4 of 12</td>
+        <td><span class="verdict cancel">Downgrade</span></td><td>Any time, prorated</td>
+      </tr>
+      <tr>
+        <td class="name">Email marketing platform<small>Core to the operation and the reporting build depends on it. Keep.</small></td>
+        <td class="n">$7,800</td><td class="n">5 of 6</td>
+        <td><span class="verdict keep">Keep</span></td><td>n/a</td>
+      </tr>
+      <tr>
+        <td class="name">CMS<small>Keep. Its scheduler replaces the tool in row one at no extra cost.</small></td>
+        <td class="n">$9,600</td><td class="n">6 of 6</td>
+        <td><span class="verdict keep">Keep</span></td><td>n/a</td>
+      </tr>
+      <tr>
+        <td class="name">Design tool<small>Light usage but no clean substitute. Revisit at renewal rather than now.</small></td>
+        <td class="n">$1,900</td><td class="n">2 of 5</td>
+        <td><span class="verdict watch">Revisit</span></td><td>Review Oct 1</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>What the build adds</h2>
+  <table>
+    <thead>
+      <tr><th>Line item</th><th class="n">Annual</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">Claude seats for the marketing team</td><td class="n">$4,320</td><td>Paid directly to the vendor under your billing. Not resold.</td></tr>
+      <tr><td class="name">Usage above the included allowance</td><td class="n">$600 to $1,100</td><td>Scales with interview volume. Estimated from your current publishing rate.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="foot">
+    Net of the cancellations above, the first year of tooling runs roughly $8,900 cheaper than what you spend today, before counting any hours returned.
+  </div>
+
+</body>
+</html>

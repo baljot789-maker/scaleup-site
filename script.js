@@ -3,28 +3,40 @@
 (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* Entrance animations and diagram runs, driven by one observer. */
-  if (!reduced && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var el = entry.target;
-        if (el.hasAttribute("data-animate")) el.classList.add("in");
-        if (el.matches("svg, .strip")) el.classList.add(el.matches(".strip") ? "lit" : "run");
-        io.unobserve(el);
-      });
-    }, { threshold: 0.35 });
+  /* Reveal on scroll. A sweep rather than an observer, so a fast scroll or an
+     anchor jump can never strand a section at opacity zero. */
+  var reveal = function (el) {
+    if (el.hasAttribute("data-animate")) el.classList.add("in");
+    if (el.matches(".timemap, .strip")) el.classList.add("lit");
+    if (el.matches("svg")) el.classList.add("run");
+  };
 
-    document.querySelectorAll("[data-animate]").forEach(function (el) { io.observe(el); });
-    document.querySelectorAll(".pipeline-svg, .mini-diagram svg").forEach(function (el) { io.observe(el); });
-    var strip = document.getElementById("strip");
-    if (strip) io.observe(strip);
+  var pending = [].slice.call(
+    document.querySelectorAll("[data-animate], .pipeline-svg, .mini-diagram svg, .timemap, .strip")
+  );
+
+  if (reduced) {
+    pending.forEach(reveal);
+    pending = [];
   } else {
-    /* Static fallback: everything visible, everything lit. */
-    document.querySelectorAll("[data-animate]").forEach(function (el) { el.classList.add("in"); });
-    document.querySelectorAll(".pipeline-svg, .mini-diagram svg").forEach(function (el) { el.classList.add("run"); });
-    var strip2 = document.getElementById("strip");
-    if (strip2) strip2.classList.add("lit");
+    /* Called straight from the scroll event rather than through
+       requestAnimationFrame: rAF is paused in hidden or prerendering tabs, and a
+       stalled sweep would leave sections stuck at opacity zero. The list shrinks
+       as it reveals and the listeners drop off once it empties, so this stays cheap. */
+    var sweep = function () {
+      var limit = window.innerHeight * 0.88;
+      pending = pending.filter(function (el) {
+        if (el.getBoundingClientRect().top < limit) { reveal(el); return false; }
+        return true;
+      });
+      if (!pending.length) {
+        window.removeEventListener("scroll", sweep);
+        window.removeEventListener("resize", sweep);
+      }
+    };
+    window.addEventListener("scroll", sweep, { passive: true });
+    window.addEventListener("resize", sweep);
+    sweep();
   }
 
   /* index: rotating input label on the pipeline diagram. */
