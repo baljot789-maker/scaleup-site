@@ -969,6 +969,65 @@ mark {
 
 .build-meta span.live { color: var(--blue); border-color: var(--blue); font-weight: 600; }
 
+/* motion variants for the build library. each diagram gets the motion that
+   matches what it does, so eight cards don't all animate identically.
+   all are triggered by .run landing on the parent svg. */
+
+.a-draw, .a-draw-rev {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-dasharray: 1;
+}
+.a-draw { stroke-dashoffset: 1; }
+.a-draw-rev { stroke-dashoffset: -1; }
+.a-draw, .a-draw-rev {
+  transition: stroke-dashoffset 620ms ease calc(var(--i, 0) * 110ms);
+}
+.run .a-draw, .run .a-draw-rev { stroke-dashoffset: 0; }
+
+.a-pop {
+  opacity: 0;
+  transform: scale(0.35);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 420ms cubic-bezier(0.2, 1.5, 0.4, 1) calc(var(--i, 0) * 85ms),
+              opacity 260ms ease calc(var(--i, 0) * 85ms);
+}
+.run .a-pop { opacity: 1; transform: scale(1); }
+
+.a-drop {
+  opacity: 0;
+  transform: translateY(-9px);
+  transform-box: fill-box;
+  transition: transform 480ms cubic-bezier(0.3, 1.2, 0.4, 1) calc(var(--i, 0) * 105ms),
+              opacity 380ms ease calc(var(--i, 0) * 105ms);
+}
+.run .a-drop { opacity: 1; transform: none; }
+
+.a-slide {
+  opacity: 0;
+  transform: translateX(-14px);
+  transform-box: fill-box;
+  transition: transform 460ms ease calc(var(--i, 0) * 95ms),
+              opacity 360ms ease calc(var(--i, 0) * 95ms);
+}
+.run .a-slide { opacity: 1; transform: none; }
+
+.a-fade {
+  opacity: 0;
+  transition: opacity 440ms ease calc(var(--i, 0) * 105ms);
+}
+.run .a-fade { opacity: 1; }
+
+.a-grow {
+  transform: scaleX(0);
+  transform-box: fill-box;
+  transform-origin: left center;
+  transition: transform 520ms ease calc(var(--i, 0) * 105ms);
+}
+.run .a-grow { transform: scaleX(1); }
+
 /* diagram parts specific to the build library */
 .b-fill { fill: var(--navy); }
 .b-open { fill: #fff; stroke: var(--navy); stroke-width: 1.5; }
@@ -1077,6 +1136,9 @@ mark {
   .p-path { stroke-dashoffset: 0; }
   .p-node { fill: var(--blue); stroke: var(--blue); }
   .p-label { fill: var(--ink); font-weight: 500; }
+  .a-draw, .a-draw-rev { stroke-dashoffset: 0 !important; }
+  .a-pop, .a-drop, .a-slide, .a-fade { opacity: 1 !important; transform: none !important; }
+  .a-grow { transform: none !important; }
   mark.prob { background: rgba(201, 47, 47, 0.14); box-shadow: inset 0 -2px 0 var(--red); }
   mark.fix { background: rgba(30, 122, 70, 0.14); box-shadow: inset 0 -2px 0 var(--green); }
   .tl-fill { transform: none; }
