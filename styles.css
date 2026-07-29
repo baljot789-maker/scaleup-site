@@ -969,6 +969,80 @@ mark {
 
 .build-meta span.live { color: var(--blue); border-color: var(--blue); font-weight: 600; }
 
+/* ---------- role cards (the team page) ---------- */
+
+.roles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+
+.role {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 26px 26px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.role:hover { border-color: var(--navy); transform: translateY(-2px); }
+
+.role h3 { font-size: 21px; margin-bottom: 8px; }
+.role p.job { font-size: 15.5px; margin-bottom: 14px; }
+
+.role .makes {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+.role .makes b { color: var(--ink); font-weight: 600; }
+
+.role-hours {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.role-hours .n {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.role-hours .n.soft { color: var(--muted); font-size: 19px; }
+.role-hours .cap { font-size: 13.5px; color: var(--muted); }
+
+.role--human { background: transparent; border-style: dashed; }
+.role--human .role-hours .n { color: var(--navy); }
+
+/* the running total */
+.tally {
+  background: var(--navy);
+  color: #eef0f6;
+  border-radius: 16px;
+  padding: 40px 44px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.tally .big {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(54px, 8vw, 86px);
+  color: #fff;
+  line-height: 0.9;
+}
+.tally .big span { display: block; font-size: 15px; font-weight: 500; color: #b9c1d6; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 10px; }
+.tally p { max-width: 52ch; }
+.tally p + p { margin-top: 12px; }
+.tally .textlink { color: #9db1ff; }
+.tally .textlink:hover { color: #fff; }
+
 /* ---------- the stack figure (destination view) ---------- */
 
 .stackfig {
@@ -1190,7 +1264,8 @@ mark {
 }
 
 @media (max-width: 900px) {
-  .tiers, .delivs, .own, .builds { grid-template-columns: 1fr; }
+  .tiers, .delivs, .own, .builds, .roles { grid-template-columns: 1fr; }
+  .tally { grid-template-columns: 1fr; gap: 22px; padding: 32px 28px; }
   .tier--featured { order: -1; }
   .strip { grid-template-columns: 1fr; }
   .guide { padding: 34px 28px; }
