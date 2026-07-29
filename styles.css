@@ -286,6 +286,20 @@ h3 { font-weight: 600; font-size: 24px; }
 
 .calc-out .v.money { color: #8ea2ff; }
 
+.calc-punch {
+  border-top: 1px solid rgba(255,255,255,0.16);
+  margin-top: 26px;
+  padding-top: 22px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(19px, 2.3vw, 25px);
+  line-height: 1.32;
+  color: #fff;
+  max-width: 40ch;
+}
+
+.calc-punch b { color: #8ea2ff; font-weight: 800; }
+
 .calc-method {
   border-top: 1px solid rgba(255,255,255,0.16);
   margin-top: 26px;
@@ -970,6 +984,26 @@ mark {
 }
 .b-t-dark { fill: var(--ink); font-family: var(--body); font-size: 11px; font-weight: 500; }
 .b-t-inv { fill: #fff; font-family: var(--body); font-size: 10.5px; font-weight: 500; }
+
+/* ---------- stakes (what happens if nothing changes) ---------- */
+
+.stakes {
+  border-left: 3px solid var(--red);
+  padding: 4px 0 4px 26px;
+  max-width: 62ch;
+}
+
+.stakes p {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(19px, 2.2vw, 24px);
+  line-height: 1.4;
+  color: var(--navy);
+}
+
+@media (max-width: 640px) {
+  .stakes { padding-left: 18px; }
+}
 
 /* ---------- cta band ---------- */
 

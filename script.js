@@ -45,9 +45,11 @@
   var HRS_PER_WEEK = 10.2;
   var WORK_WEEKS = 48;
   var sizeButtons = document.querySelectorAll(".sizes button");
+  var SALARY = 65000; /* stated assumption, disclosed in the method note */
   var rateInput = document.getElementById("rate");
   var outHours = document.getElementById("calcHours");
   var outMoney = document.getElementById("calcMoney");
+  var outHires = document.getElementById("calcHires");
 
   if (sizeButtons.length && rateInput && outHours && outMoney) {
     var heads = 5;
@@ -56,8 +58,10 @@
       var rate = parseFloat(rateInput.value);
       if (!isFinite(rate) || rate <= 0) rate = 0;
       var hours = heads * HRS_PER_WEEK * WORK_WEEKS;
+      var cost = hours * rate;
       outHours.textContent = Math.round(hours).toLocaleString("en-US");
-      outMoney.textContent = "$" + Math.round(hours * rate).toLocaleString("en-US");
+      outMoney.textContent = "$" + Math.round(cost).toLocaleString("en-US");
+      if (outHires) outHires.textContent = (Math.round(cost / SALARY * 10) / 10).toFixed(1);
     };
 
     sizeButtons.forEach(function (btn) {

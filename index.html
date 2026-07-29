@@ -14,8 +14,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
-<script src="script.js?v=5" defer></script>
+<link rel="stylesheet" href="styles.css?v=6">
+<script src="script.js?v=6" defer></script>
 </head>
 <body>
 
@@ -32,14 +32,14 @@
 <main class="wrap">
 
   <section class="hero">
-    <p class="kicker">The stack teardown</p>
-    <h1>Your team loses ten hours a week to work a machine should do</h1>
-    <p class="lead">That's the measured average across 1,970 marketers, not a guess. In ten business days you'll know where your own team's hours go and what it takes to get them back. Two hours of your time, and a refund if it wasn't worth it.</p>
+    <p class="kicker">For marketing teams of 3 to 15</p>
+    <h1>You're already paying for a hire you never made</h1>
+    <p class="lead">Marketers lose about ten hours a week each to work a machine should be doing. Across a team of six that adds up to a full salary, spent on formatting, reposting, and chasing approvals. In ten business days I'll show you where yours goes and what it takes to get it back.</p>
     <div class="hero-actions">
       <a class="btn btn-big" href="book.html">Book 15 minutes</a>
-      <a class="textlink" href="#calc">Work out what it's costing you</a>
+      <a class="textlink" href="#calc">See what it's costing you</a>
     </div>
-    <p class="hero-sub">$4,500 fixed. Credited in full toward your first build.</p>
+    <p class="hero-sub">$4,500 fixed. Taken off the price of your first build.</p>
   </section>
 
   <section class="pains">
@@ -82,15 +82,15 @@
   </section>
 
   <section class="guide" data-animate>
-    <p class="empathy">You are not behind on AI. You are missing a number.</p>
-    <p class="answer">Nobody can tell you what to automate until somebody counts what your team actually does. So that is what I do. Ten business days, and you have your hours, your dollar figure, the systems worth building in the order worth building them, and a walkthrough you can forward to whoever asked.</p>
+    <p class="empathy">You're not behind on AI. You're missing a number.</p>
+    <p class="answer">Closer to a home inspection than a consulting project. You pay a small fixed fee before a much bigger decision, you get a written report you keep, and what you do with it is your call. Nobody can tell you what to automate until somebody adds up what your team actually does all week. That's the job.</p>
     <a class="textlink" href="how-it-works.html">See the ten days</a>
   </section>
 
   <section class="block" id="calc">
     <div class="calc" data-animate>
       <h2>What it's costing you right now</h2>
-      <p class="lede">Published averages against your headcount. Rough by definition, and still the first real number most teams have seen.</p>
+      <p class="lede">Published averages against your headcount. Rough by definition, and still the first real number most teams ever see.</p>
 
       <div class="calc-controls">
         <div>
@@ -103,7 +103,7 @@
           </div>
         </div>
         <div>
-          <label class="calc-label" for="rate">Loaded hourly cost</label>
+          <label class="calc-label" for="rate">What an hour of their time costs you</label>
           <div class="rate-wrap">
             <span>$</span>
             <input id="rate" type="number" min="1" max="500" step="1" value="34.63" inputmode="decimal">
@@ -123,15 +123,17 @@
         </div>
       </div>
 
+      <p class="calc-punch">That's <b id="calcHires">1.3</b> full-time hires you're already paying for, spread invisibly across everyone's week. It never shows up as a line item, so it never gets fixed.</p>
+
       <p class="calc-method">
-        <code>people × 10.2 hrs/week × 48 weeks × your hourly cost</code>. The 10.2 hours is the measured weekly average marketers spend on routine manual tasks, from <a class="textlink" href="https://ppc.land/doubleverify-study-reveals-marketers-spend-10-hours-weekly-on-manual-tasks/" target="_blank" rel="noopener">DoubleVerify's 2025 Global Insights</a> survey of 1,970 marketing professionals. The default rate and 48 working weeks reproduce their own published figure of roughly $17,000 per person per year. Change the rate to yours. The teardown replaces this estimate with your actual numbers.
+        <code>people × 10.2 hrs/week × 48 weeks × your hourly cost</code>. The 10.2 hours is the measured weekly average marketers spend on routine manual tasks, from <a class="textlink" href="https://ppc.land/doubleverify-study-reveals-marketers-spend-10-hours-weekly-on-manual-tasks/" target="_blank" rel="noopener">DoubleVerify's 2025 Global Insights</a> survey of 1,970 marketing professionals. The default rate and 48 working weeks reproduce their own published figure of roughly $17,000 per person per year. The hires comparison divides that cost by a $65,000 salary, which is an assumption rather than a finding, so change either number to match your own. The teardown replaces the whole estimate with your real figures.
       </p>
     </div>
   </section>
 
   <section class="block" id="timemap">
     <div class="section-head">
-      <p class="kicker">Deliverable 01</p>
+      <p class="kicker">Document 01</p>
       <h2>Then, where your ten hours actually go</h2>
       <p>The average tells you the size of the problem. This tells you the shape of yours, task by task, with the rows a system should own marked in blue.</p>
     </div>
@@ -166,8 +168,8 @@
         <ul class="offer-facts">
           <li><span class="k">Duration</span><span class="v">10 business days</span></li>
           <li><span class="k">Your time</span><span class="v">2 hours total</span></li>
-          <li><span class="k">Access needed</span><span class="v">Read-only</span></li>
-          <li><span class="k">Deliverables</span><span class="v">5, all yours to keep</span></li>
+          <li><span class="k">What I need</span><span class="v">View-only access</span></li>
+          <li><span class="k">You keep</span><span class="v">5 documents, yours to keep</span></li>
           <li><span class="k">Guarantee</span><span class="v">Unconditional refund</span></li>
         </ul>
       </div>
@@ -180,7 +182,7 @@
     </div>
   </section>
 
-  <section class="block" id="deliverables">
+  <section class="block" id="documents">
     <div class="section-head">
       <p class="kicker">What lands in your inbox</p>
       <h2>It arrives as five documents</h2>
@@ -189,7 +191,7 @@
       <div class="deliv" data-animate style="--d:0">
         <span class="num">01</span>
         <h3>The time map</h3>
-        <p>Where your team's hours go, traced task by task, with the automatable rows flagged and totaled.</p>
+        <p>Where your team's hours go, traced task by task, with the rows a machine could take over marked and added up.</p>
         <p class="kills">Settles: "I can't prove the problem is real to anyone above me."</p>
       </div>
       <div class="deliv" data-animate style="--d:1">
@@ -200,7 +202,7 @@
       </div>
       <div class="deliv" data-animate style="--d:2">
         <span class="num">03</span>
-        <h3>Build specs</h3>
+        <h3>The blueprints</h3>
         <p>Written so any competent developer can execute them. Including one who isn't me.</p>
         <p class="kills">Settles: "What if I get locked into a vendor who's the only one who can maintain this."</p>
       </div>
@@ -234,13 +236,19 @@
     <div class="section-head">
       <p class="kicker">After the map</p>
       <h2>If you want it built, you own it</h2>
-      <p>Most people who take the teardown build the top item next. That's a separate decision, made after you have the specs in hand.</p>
+      <p>Most people who take the teardown build the top item next. That's a separate decision, made once you have the blueprints in hand.</p>
     </div>
     <div class="own">
       <div class="own-item" data-animate style="--d:0"><strong>The accounts are yours</strong><span>Set up under your billing, not resold through me.</span></div>
       <div class="own-item" data-animate style="--d:1"><strong>The code is yours</strong><span>In your repository, documented, no license to renew.</span></div>
       <div class="own-item" data-animate style="--d:2"><strong>The documentation is yours</strong><span>Written for whoever maintains it next, including a stranger.</span></div>
       <div class="own-item" data-animate style="--d:3"><strong>Leaving costs you nothing</strong><span>Walk away any month and it keeps running without me.</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="stakes" data-animate>
+      <p>Do nothing and none of this gets worse in a way anyone notices. That's the trap. The hours stay buried in everyone's week, the renewal goes through again, and next year you have the same conversation with the same board, except the number is bigger and you still can't name it.</p>
     </div>
     <p style="margin-top: 26px;"><a class="textlink" href="how-it-works.html">See the ten days and what a build costs</a></p>
   </section>
