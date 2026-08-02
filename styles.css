@@ -1615,3 +1615,47 @@ mark {
   .navgroup-btn { min-height: 44px; padding-top: 0; padding-bottom: 0; }
   .nav-links a:not(.btn) { min-height: 44px; display: inline-flex; align-items: center; }
 }
+
+/* ---------- what actually gets built (homepage) ---------- */
+
+.fixes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.fix {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 20px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.fix:hover { border-color: var(--navy); transform: translateY(-2px); }
+
+.fix .runs {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.fix h3 { font-size: 17px; line-height: 1.2; margin-bottom: 7px; }
+.fix p { font-size: 14.5px; color: var(--muted); flex-grow: 1; margin-bottom: 12px; }
+
+.fix .hrs {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy);
+}
+.fix .hrs span { font-family: var(--body); font-weight: 400; font-size: 13px; color: var(--muted); }
+
+.fix--open { border-style: dashed; background: transparent; }
+.fix--open .runs { color: var(--muted); }
+
+@media (max-width: 900px) { .fixes { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .fixes { grid-template-columns: 1fr; } }
