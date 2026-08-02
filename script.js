@@ -8,11 +8,11 @@
   var reveal = function (el) {
     if (el.hasAttribute("data-animate")) el.classList.add("in");
     if (el.matches(".timemap, .strip")) el.classList.add("lit");
-    if (el.matches("svg")) el.classList.add("run");
+    if (el.matches("svg, [data-metric], [data-tree]")) el.classList.add("run");
   };
 
   var pending = [].slice.call(
-    document.querySelectorAll("[data-animate], .pipeline-svg, .mini-diagram svg, .build-card svg, .stackfig svg, .timemap, .strip")
+    document.querySelectorAll("[data-animate], .pipeline-svg, .mini-diagram svg, .build-card svg, .stackfig svg, .timemap, .strip, [data-metric], [data-tree]")
   );
 
   if (reduced) {
@@ -114,4 +114,89 @@
       window.addEventListener("resize", drawRail);
     }
   }
+
+
+  /* ── proof layer ─────────────────────────────────────────────
+     Two behaviours the rest of the site does not use.
+     1. countTo: a measured value transitions from its before
+        state to its after state, in step with the bar. This is
+        a state change, not an entrance.
+     2. nav disclosure: grouped links, thumb and keyboard
+        operable, motion kept near-invisible on purpose.
+     ──────────────────────────────────────────────────────────── */
+
+  var metrics = document.querySelectorAll("[data-metric]");
+  if (metrics.length) {
+    var runCount = function (box) {
+      var out = box.querySelector("[data-val]");
+      if (!out) return;
+      var from = parseFloat(box.getAttribute("data-from"));
+      var to = parseFloat(box.getAttribute("data-to"));
+      if (!isFinite(from) || !isFinite(to)) return;
+      if (reduced) { out.textContent = to.toLocaleString("en-US"); return; }
+
+      var DUR = 1150, DELAY = 260, started = null;
+      var step = function (now) {
+        if (started === null) started = now;
+        var t = (now - started - DELAY) / DUR;
+        if (t < 0) { requestAnimationFrame(step); return; }
+        if (t > 1) t = 1;
+        /* same curve as the bar so the number and the bar agree */
+        var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        out.textContent = Math.round(from + (to - from) * e).toLocaleString("en-US");
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    if (reduced) {
+      metrics.forEach(runCount);
+    } else {
+      var seen = new WeakSet();
+      var watchMetrics = function () {
+        metrics.forEach(function (m) {
+          if (seen.has(m)) return;
+          if (m.classList.contains("run")) { seen.add(m); runCount(m); }
+        });
+      };
+      window.addEventListener("scroll", watchMetrics, { passive: true });
+      window.addEventListener("resize", watchMetrics);
+      watchMetrics();
+    }
+  }
+
+  var navBtn = document.querySelector(".navgroup-btn");
+  var navMenu = document.getElementById("proofmenu");
+  if (navBtn && navMenu) {
+    var setOpen = function (open) {
+      navBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) { navMenu.removeAttribute("hidden"); }
+      else { navMenu.setAttribute("hidden", ""); }
+    };
+
+    navBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setOpen(navBtn.getAttribute("aria-expanded") !== "true");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (navBtn.getAttribute("aria-expanded") !== "true") return;
+      if (!navMenu.contains(e.target) && e.target !== navBtn) setOpen(false);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      if (navBtn.getAttribute("aria-expanded") !== "true") return;
+      setOpen(false);
+      navBtn.focus();
+    });
+
+    /* focus leaving the group closes it, so nothing is trapped */
+    navMenu.addEventListener("focusout", function (e) {
+      if (!e.relatedTarget) return;
+      if (navMenu.contains(e.relatedTarget) || e.relatedTarget === navBtn) return;
+      setOpen(false);
+    });
+  }
+
 })();

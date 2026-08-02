@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real results | ScaleUp Sidekicks</title>
+<meta name="description" content="Four builds, described by what broke and what changed. Two carry measured before-and-after numbers, one is a labeled estimate, and one has no number at all.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Real results | ScaleUp Sidekicks">
+<meta property="og:description" content="Four builds, described by what broke and what changed. Two measured, one estimated, one with no number attached.">
+<meta property="og:url" content="https://scaleupsidekicks.com/results.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20">
+<script src="script.js?v=20" defer></script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="wordmark" href="index.html">ScaleUp Sidekicks</a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="how-it-works.html">How it works</a>
+    <div class="navgroup">
+      <button class="navgroup-btn" type="button" aria-expanded="false" aria-controls="proofmenu">Proof <span class="caret" aria-hidden="true"></span></button>
+      <div class="navgroup-menu" id="proofmenu" hidden>
+        <a class="lead-item" href="results.html" aria-current="page"><b>Real results</b><span>Four builds, with numbers</span></a>
+        <a href="proof.html">What you get</a>
+        <a href="examples.html">Example fixes</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="team.html">The team</a>
+      </div>
+    </div>
+    <a class="btn" href="book.html">Book 15 minutes</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="kicker">Real results</p>
+    <h1>Four builds, and what actually changed</h1>
+    <p class="lead">Four builds, described by what broke and what changed. Two carry measured before-and-after numbers. One is a labeled estimate. One is a capability with no number attached, and it says so.</p>
+  </section>
+
+  <div class="case-note">
+    <strong>Whose results these are.</strong>
+    <p>These are systems I built in previous roles, anonymized to keep employers and colleagues out of it. They are not ScaleUp client engagements, because ScaleUp has not run one yet. When it has, that will appear here separately and it will say so.</p>
+  </div>
+
+  <section class="block">
+    <div class="cases">
+
+      <article class="case" data-animate style="--d:0">
+        <div class="case-head"><span class="case-num">01</span></div>
+        <h3>A four-person team took on 15 more clients without a single new hire</h3>
+        <p>A content agency of four was hand-writing and hand-optimizing every client blog and release. Capacity was capped by what four people could physically produce, so growth meant hiring, and hiring meant margin.</p>
+        <p>I built a per-client voice profile system and a drafting workflow with keyword and pillar-page mapping wired in, then handed it to three writers. About nine in ten drafts came back in the client's voice without heavy editing. The remaining one in ten still needed a human, which is why a human stayed in the loop.</p>
+        <p>Over roughly 18 months the agency went from 10 clients to 25 on the same headcount. The system didn't win the clients. It's the reason winning them didn't cost three salaries.</p>
+
+        <div class="metric" data-metric data-from="10" data-to="25">
+          <div class="metric-readout">
+            <span class="metric-val" data-val>10</span>
+            <span class="metric-cap">clients carried, up from 10, on the same four people</span>
+          </div>
+          <div class="metric-track"><div class="metric-fill" style="--from:0.4; --to:1"></div></div>
+          <div class="metric-scale"><span>10 clients</span><span>25 clients</span></div>
+        </div>
+
+        <p class="case-settles"><b>Settles:</b> "Growing means hiring, and I can't get headcount approved."</p>
+      </article>
+
+      <article class="case" data-animate style="--d:0">
+        <div class="case-head"><span class="case-num">02</span></div>
+        <h3>A launch week that ate 25 hours now takes 10</h3>
+        <p>An in-house communications function ran entirely on one person's memory. No documented style, no findable boilerplate, no repeatable process for pitching. Every launch was rebuilt from scratch, and quality depended on who happened to be doing it.</p>
+        <p>I documented the actual working style first, then built the drafting workflow around it, plus pitch generation, per-outlet personalization, and one standard reporting format so results stopped being re-derived every cycle.</p>
+        <p>A launch week went from about 25 hours to about 10. Same output, same standards, measured against my own before-and-after as the person who owned the function. The larger result is that it stopped being mine. Anyone on the team could run a launch after that.</p>
+
+        <div class="metric" data-metric data-from="25" data-to="10">
+          <div class="metric-readout">
+            <span class="metric-val" data-val>25</span>
+            <span class="metric-cap">hours per launch week, down from 25</span>
+          </div>
+          <div class="metric-track"><div class="metric-fill" style="--from:1; --to:0.4"></div></div>
+          <div class="metric-scale"><span>0 hrs</span><span>25 hrs</span></div>
+        </div>
+
+        <p class="case-settles"><b>Settles:</b> "If the person who knows how to do this leaves, we're finished."</p>
+      </article>
+
+      <article class="case" data-animate style="--d:0">
+        <div class="case-head"><span class="case-num">03</span></div>
+        <h3>Ten people stopped re-solving the same problem every week</h3>
+        <p class="case-qual">Estimated, not measured</p>
+        <p>A marketing team of about ten was writing to a style guide nobody could locate. Every piece got an informal cleanup pass from whoever cared most, which meant the same corrections happened over and over in a dozen separate places.</p>
+        <p>I built one shared style and brand-terms layer that every downstream workflow reads from, so the rules live in a single place instead of being duplicated inside each person's process. Update it once, and everything inherits the change.</p>
+        <p>Estimated at about 5 hours per person per week across 10 people, which is roughly 50 hours a week or 2,400 a year. This one is my own directional estimate, not a recorded before-and-after like the two above. I'm labeling it because you should discount it accordingly.</p>
+
+        <div class="metric metric--estimate" data-metric data-from="0" data-to="50">
+          <div class="metric-readout">
+            <span class="metric-val" data-val>0</span>
+            <span class="metric-cap">hours a week across ten people, estimated rather than recorded</span>
+          </div>
+          <div class="metric-track"><div class="metric-fill" style="--from:0; --to:1"></div></div>
+          <div class="metric-scale"><span>directional estimate</span><span>~2,400 hrs a year</span></div>
+        </div>
+
+        <p class="case-settles"><b>Settles:</b> "Everyone's fixing the same things separately and nobody notices the cost."</p>
+      </article>
+
+      <article class="case" data-animate style="--d:0">
+        <div class="case-head"><span class="case-num">04</span></div>
+        <h3>Testing campaigns against the buyer before spending on the buyer</h3>
+        <p class="case-qual">A capability, not a measured result</p>
+        <p>Personas existed as a slide deck nobody opened. Campaign decisions got made on instinct or on the loudest opinion in the room, and the first real feedback arrived after launch, when the budget was already committed.</p>
+        <p>I built persona agents loaded with a standing repository of research, interview language, buying criteria, and known objections, so each one answered as that segment rather than as a generic assistant. The team could put a message, a subject line, or an offer in front of a persona before it went anywhere near a media budget, and get pushback in the segment's own language.</p>
+        <p>The change is that the research stopped being a document and became something the team argued with. Objections got caught at the draft stage instead of in post-mortem. Personas stopped decaying, because the repository gets updated as new research comes in rather than being rewritten annually and forgotten.</p>
+        <p>The limit is worth stating plainly. A persona agent reflects what you loaded into it. It cannot surface what your research never captured, and thin inputs produce confident nonsense. This sharpens the work of talking to customers. It does not replace it.</p>
+
+        <p class="case-settles"><b>Settles:</b> "We find out our messaging was wrong after we've paid to send it."</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-head">
+      <h2>What these have in common</h2>
+      <p>None of them started with a tool. Each started with somebody writing down how the work actually gets done, then building on top of that. The audit is the written-down part, sold on its own.</p>
+    </div>
+    <p><a class="textlink" href="architecture.html">See how the pieces stack</a></p>
+  </section>
+
+</main>
+
+<section class="cta-band">
+  <h2>Fifteen minutes, then you'll know</h2>
+  <p>Tell me what your team keeps redoing by hand. I'll tell you straight whether an audit would find anything worth $4,500, and I'll say no if it wouldn't.</p>
+  <div class="cta-actions">
+    <a class="btn btn-big" href="book.html">Book 15 minutes</a>
+    <a class="btn btn-big btn-ghost" href="how-it-works.html">See the ten days</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <span>&copy; 2026 ScaleUp Sidekicks</span>
+  <a class="textlink" href="mailto:hello@scaleupsidekicks.com">hello@scaleupsidekicks.com</a>
+  <span>You own everything we build.</span>
+</footer>
+
+</body>
+</html>

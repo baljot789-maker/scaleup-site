@@ -14,8 +14,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=16">
-<script src="script.js?v=16" defer></script>
+<link rel="stylesheet" href="styles.css?v=20">
+<script src="script.js?v=20" defer></script>
 </head>
 <body>
 
@@ -23,9 +23,16 @@
   <a class="wordmark" href="index.html">ScaleUp Sidekicks</a>
   <nav class="nav-links" aria-label="Main">
     <a href="how-it-works.html">How it works</a>
-    <a href="proof.html">What you get</a>
-    <a href="examples.html">Example fixes</a>
-    <a href="team.html">The team</a>
+    <div class="navgroup">
+      <button class="navgroup-btn" type="button" aria-expanded="false" aria-controls="proofmenu">Proof <span class="caret" aria-hidden="true"></span></button>
+      <div class="navgroup-menu" id="proofmenu" hidden>
+        <a class="lead-item" href="results.html"><b>Real results</b><span>Four builds, with numbers</span></a>
+        <a href="proof.html">What you get</a>
+        <a href="examples.html">Example fixes</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="team.html">The team</a>
+      </div>
+    </div>
     <a class="btn" href="book.html" aria-current="page">Book 15 minutes</a>
   </nav>
 </header>
