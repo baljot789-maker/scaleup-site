@@ -1865,3 +1865,85 @@ mark {
   .job { grid-template-columns: 1fr; gap: 8px; }
 }
 @media (max-width: 560px) { .certs { grid-template-columns: 1fr; } }
+
+.pricing-split.three { grid-template-columns: repeat(3, 1fr); }
+.step-cost.build { background: var(--navy); border-color: var(--navy); }
+.step-cost.build .when { color: #8ea2ff; }
+.step-cost.build .amt { color: #fff; }
+.step-cost.build p { color: #eef0f6; }
+.step-cost.build .note { color: #b9c1d6; }
+@media (max-width: 900px) { .pricing-split.three { grid-template-columns: 1fr; } }
+
+/* ---------- founding client program ---------- */
+
+.deal {
+  background: var(--navy);
+  color: #eef0f6;
+  border-radius: 18px;
+  padding: 40px 44px;
+  margin-bottom: 44px;
+}
+.deal h2 { color: #fff; margin-bottom: 14px; }
+.deal > p { max-width: 58ch; opacity: 0.92; margin-bottom: 24px; }
+
+.deal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.deal-item {
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+.deal-item b {
+  display: block;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(26px, 4vw, 34px);
+  color: #8ea2ff;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.deal-item span { font-size: 15px; color: #eef0f6; }
+
+.terms { display: grid; gap: 0; margin: 8px 0 4px; }
+.term-row {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+.term-row:last-child { border-bottom: 1px solid var(--line); }
+.term-row .n {
+  font-family: var(--display); font-weight: 800; font-size: 15px; color: var(--blue);
+}
+.term-row p { margin: 0; font-size: 16px; max-width: 62ch; }
+.term-row p b { font-weight: 600; }
+
+/* form */
+.apply { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 32px 32px 28px; max-width: 640px; }
+.apply .row { margin-bottom: 18px; }
+.apply label { display: block; font-size: 14.5px; font-weight: 600; margin-bottom: 6px; }
+.apply .hint { font-size: 13px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+.apply input, .apply textarea, .apply select {
+  width: 100%;
+  font-family: var(--body);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 13px;
+}
+.apply textarea { min-height: 104px; resize: vertical; }
+.apply input:focus, .apply textarea:focus, .apply select:focus { outline: 3px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
+.apply .check { display: flex; gap: 11px; align-items: flex-start; }
+.apply .check input { width: auto; margin-top: 2px; flex: 0 0 auto; width: 24px; height: 24px; accent-color: var(--blue); }
+.apply .check label { font-weight: 400; font-size: 15px; margin: 0; }
+.apply button { width: 100%; min-height: 52px; font-size: 16px; margin-top: 6px; }
+.apply .fine { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+@media (max-width: 720px) {
+  .deal { padding: 30px 24px; }
+  .deal-grid { grid-template-columns: 1fr; }
+  .apply { padding: 24px 20px 22px; }
+}
