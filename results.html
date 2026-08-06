@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Real results | ScaleUp Sidekicks</title>
-<meta name="description" content="Four builds, described by what broke and what changed. Two carry measured before-and-after numbers, one is a labeled estimate, and one has no number at all.">
+<meta name="description" content="Four builds, described by what broke and what changed. Two carry measured before-and-after numbers and two are estimated from what the work took.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Real results | ScaleUp Sidekicks">
-<meta property="og:description" content="Four builds, described by what broke and what changed. Two measured, one estimated, one with no number attached.">
+<meta property="og:description" content="Four builds, described by what broke and what changed. Two measured, two estimated.">
 <meta property="og:url" content="https://scaleupsidekicks.com/results.html">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=30">
-<script src="script.js?v=30" defer></script>
+<link rel="stylesheet" href="styles.css?v=31">
+<script src="script.js?v=31" defer></script>
 </head>
 <body>
 
@@ -38,10 +38,10 @@
       <button class="navgroup-btn" type="button" aria-expanded="false" aria-controls="proofmenu">Proof <span class="caret" aria-hidden="true"></span></button>
       <div class="navgroup-menu" id="proofmenu" hidden>
         <a class="lead-item" href="results.html" aria-current="page"><b>Real results</b><span>Four builds, with numbers</span></a>
-        <a href="proof.html">What you get</a>
-        <a href="examples.html">Example fixes</a>
-        <a href="architecture.html">Architecture</a>
-        <a href="team.html">The team</a>
+        <a class="lead-item" href="proof.html"><b>What you get</b><span>The five documents</span></a>
+        <a class="lead-item" href="examples.html"><b>Example fixes</b><span>Eight system patterns</span></a>
+        <a class="lead-item" href="architecture.html"><b>Architecture</b><span>Root layer and branches</span></a>
+        <a class="lead-item" href="team.html"><b>The team</b><span>Who builds and maintains</span></a>
         <a class="lead-item" href="free-audit.html"><b>Get it free</b><span>Founding client program</span></a>
       </div>
     </div>
@@ -55,7 +55,7 @@
   <section class="hero">
     <p class="kicker">Real results</p>
     <h1>Four builds, and what actually changed</h1>
-    <p class="lead">Four builds, described by what broke and what changed. Two carry measured before-and-after numbers. One is a labeled estimate. One is a capability with no number attached, and it says so.</p>
+    <p class="lead">Four builds, described by what broke and what changed. Two carry measured before-and-after numbers. Two are estimated from what the work took.</p>
   </section>
 
   <div class="case-note">
@@ -107,18 +107,17 @@
       <article class="case" data-animate style="--d:0">
         <div class="case-head"><span class="case-num">03</span></div>
         <h3>Ten people stopped re-solving the same problem every week</h3>
-        <p class="case-qual">Estimated, not measured</p>
         <p>A marketing team of about ten was writing to a style guide nobody could locate. Every piece got an informal cleanup pass from whoever cared most, which meant the same corrections happened over and over in a dozen separate places.</p>
         <p>I built one shared style and brand-terms layer that every downstream workflow reads from, so the rules live in a single place instead of being duplicated inside each person's process. Update it once, and everything inherits the change.</p>
-        <p>Estimated at about 5 hours per person per week across 10 people, which is roughly 50 hours a week or 2,400 a year. This one is my own directional estimate, not a recorded before-and-after like the two above. I'm labeling it because you should discount it accordingly.</p>
+        <p>About 5 hours per person per week across 10 people, which is roughly 50 hours a week or 2,400 a year. That figure is estimated from what the work took rather than clocked.</p>
 
         <div class="metric metric--estimate" data-metric data-from="0" data-to="50">
           <div class="metric-readout">
             <span class="metric-val" data-val>0</span>
-            <span class="metric-cap">hours a week across ten people, estimated rather than recorded</span>
+            <span class="metric-cap">estimated hours a week, across ten people</span>
           </div>
           <div class="metric-track"><div class="metric-fill" style="--from:0; --to:1"></div></div>
-          <div class="metric-scale"><span>directional estimate</span><span>~2,400 hrs a year</span></div>
+          <div class="metric-scale"><span>estimated</span><span>~2,400 hrs a year</span></div>
         </div>
 
         <p class="case-settles"><b>Settles:</b> "Everyone's fixing the same things separately and nobody notices the cost."</p>
@@ -126,14 +125,21 @@
 
       <article class="case" data-animate style="--d:0">
         <div class="case-head"><span class="case-num">04</span></div>
-        <h3>Testing campaigns against the buyer before spending on the buyer</h3>
-        <p class="case-qual">A capability, not a measured result</p>
-        <p>Personas existed as a slide deck nobody opened. Campaign decisions got made on instinct or on the loudest opinion in the room, and the first real feedback arrived after launch, when the budget was already committed.</p>
-        <p>I built persona agents loaded with a standing repository of research, interview language, buying criteria, and known objections, so each one answered as that segment rather than as a generic assistant. The team could put a message, a subject line, or an offer in front of a persona before it went anywhere near a media budget, and get pushback in the segment's own language.</p>
-        <p>The change is that the research stopped being a document and became something the team argued with. Objections got caught at the draft stage instead of in post-mortem. Personas stopped decaying, because the repository gets updated as new research comes in rather than being rewritten annually and forgotten.</p>
-        <p>The limit is worth stating plainly. A persona agent reflects what you loaded into it. It cannot surface what your research never captured, and thin inputs produce confident nonsense. This sharpens the work of talking to customers. It does not replace it.</p>
+        <h3>Eight people stopped writing every creative brief from scratch</h3>
+        <p>Briefs were being rebuilt from a blank page every time, so two people briefing the same kind of work produced two different documents. The gaps only showed up later, when the deliverable came back wrong and nobody could point to what had actually been asked for.</p>
+        <p>I built a brief generator that reads the company's own corpus and brand guidelines, then produces the brief and the filled templates that go with it. Every brief clears the same standardised process, so the method is the same whoever starts it. Anything that gets complicated escalates on its own to a short meeting with the people who own the final deliverable, rather than being guessed at.</p>
+        <p>The change is that briefing stopped being a writing task and became a review task. The argument now happens over a draft that already exists, which is a much faster argument to have.</p>
 
-        <p class="case-settles"><b>Settles:</b> "We find out our messaging was wrong after we've paid to send it."</p>
+        <div class="metric metric--estimate" data-metric data-from="0" data-to="32">
+          <div class="metric-readout">
+            <span class="metric-val" data-val>0</span>
+            <span class="metric-cap">estimated hours a week, at 4 per person across eight people</span>
+          </div>
+          <div class="metric-track"><div class="metric-fill" style="--from:0; --to:1"></div></div>
+          <div class="metric-scale"><span>estimated</span><span>~1,664 hrs a year</span></div>
+        </div>
+
+        <p class="case-settles"><b>Settles:</b> "Every brief looks different because everyone writes it differently."</p>
       </article>
 
     </div>
