@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/team.html",         "destination": "/systems.html", "permanent": true },
+    { "source": "/team",              "destination": "/systems",      "permanent": true },
+    { "source": "/examples.html",     "destination": "/systems.html", "permanent": true },
+    { "source": "/examples",          "destination": "/systems",      "permanent": true },
+    { "source": "/architecture.html", "destination": "/systems.html", "permanent": true },
+    { "source": "/architecture",      "destination": "/systems",      "permanent": true },
+    { "source": "/results.html",      "destination": "/proof.html",   "permanent": true },
+    { "source": "/results",           "destination": "/proof",        "permanent": true },
+    { "source": "/free-audit.html",   "destination": "/sample.html",  "permanent": true },
+    { "source": "/free-audit",        "destination": "/sample",       "permanent": true }
+  ]
+}

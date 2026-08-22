@@ -1991,3 +1991,404 @@ mark {
 .person .yrs b { font-family: var(--display); font-weight: 800; font-size: 17px; color: var(--navy); }
 
 @media (max-width: 820px) { .people { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════════════════
+   REPOSITIONING, 2026-08-18
+   Systems plus capacity. Components added for the new homepage
+   argument: the four-step ladder, the published savings math,
+   the fire-us block, and the objections grid.
+   ═══════════════════════════════════════════════════════════ */
+
+/* the four-step ladder */
+
+.pricing-split.four { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1040px) { .pricing-split.four { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px)  { .pricing-split.four { grid-template-columns: 1fr; } }
+
+/* the monthly marker, small enough that the number still reads as the figure */
+.step-cost .amt .per,
+.tier .price .per {
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+.tier--featured .price .per { color: #b9c1d6; }
+
+/* ---------- the published math (index signature) ---------- */
+
+.math {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 34px 32px 30px;
+}
+
+.math-table { width: 100%; border-collapse: collapse; }
+
+.math-table caption {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 14px;
+}
+
+.math-table th,
+.math-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+  vertical-align: baseline;
+  text-align: left;
+}
+
+.math-table th {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 15.5px;
+  color: var(--ink);
+  padding-right: 18px;
+}
+
+.math-table .fig {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--navy);
+  white-space: nowrap;
+  text-align: right;
+  padding-right: 26px;
+  width: 1%;
+}
+
+.math-table .src {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.4;
+  width: 34%;
+}
+
+/* the two rows that carry the answer */
+.math-table tr.total th { font-weight: 600; }
+.math-table tr.total .fig { color: var(--blue); font-size: 24px; }
+.math-table tr.total.top th,
+.math-table tr.total.top td { border-top: 2px solid var(--navy); }
+.math-table tr:last-child th,
+.math-table tr:last-child td { border-bottom: none; }
+
+.math-punch {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(19px, 2.4vw, 24px);
+  line-height: 1.25;
+  color: var(--navy);
+  border-left: 3px solid var(--blue);
+  padding: 6px 0 6px 20px;
+  margin: 26px 0 24px;
+}
+.math-punch b { font-weight: 800; }
+
+.math-caveat {
+  font-size: 15.5px;
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  max-width: 68ch;
+}
+.math-caveat b { font-weight: 600; color: var(--navy); }
+
+.math-recon { font-size: 13.5px; color: var(--muted); max-width: 74ch; }
+
+/* the source column is the first thing to go when there is no room for it,
+   so it moves under the figure rather than squeezing the row into three lines */
+@media (max-width: 760px) {
+  .math { padding: 26px 22px 24px; }
+  .math-table, .math-table caption, .math-table tbody, .math-table tr, .math-table th, .math-table td { display: block; }
+  .math-table tr { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  .math-table th, .math-table td { border: none; padding: 0; }
+  .math-table th { margin-bottom: 4px; }
+  .math-table .fig { text-align: left; padding-right: 0; width: auto; }
+  .math-table .src { width: auto; margin-top: 3px; }
+  .math-table tr.total.top { border-top: 2px solid var(--navy); }
+  .math-table tr.total th,
+  .math-table tr.total td { border-top: none; }
+  .math-table tr:last-child { border-bottom: none; }
+}
+
+/* ---------- how to fire us ---------- */
+
+.fire-line {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(20px, 2.8vw, 28px);
+  line-height: 1.2;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  padding-top: 22px;
+  margin-top: 22px;
+  max-width: 34ch;
+  opacity: 1;
+}
+
+/* ---------- objections ---------- */
+
+.objs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 34px; }
+
+.obj { border-top: 2px solid var(--navy); padding-top: 16px; }
+.obj h3 { font-size: 19px; line-height: 1.2; margin-bottom: 8px; }
+.obj p { font-size: 15.5px; color: var(--muted); max-width: 48ch; }
+
+@media (max-width: 760px) { .objs { grid-template-columns: 1fr; gap: 24px; } }
+
+/* ---------- nav at five links ---------- */
+
+/* three per row then two reads deliberate; two-per-row leaves a single
+   orphan on the third row now that the proof dropdown is gone */
+@media (max-width: 640px) {
+  .nav-links a:not(.btn) { flex: 0 0 calc(33.333% - 12px); font-size: 13.5px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   THE LAUNCH, 2026-08-18
+   The site's signature moment and its own motion idea. A crew
+   raises parts until a rocket is assembled, the gantry pulls
+   away, the engine lights and it climbs. The crew never leaves
+   the ground and never gets on board: the client's thing takes
+   off, we stay and wave. Whimsy lives in the sequencing and the
+   anticipation beats, not in the drawing. Geometric shapes,
+   house palette, no cartoon faces and no emoji.
+   ═══════════════════════════════════════════════════════════ */
+
+.hero--duo {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.hero--duo h1 { font-size: clamp(38px, 4.7vw, 60px); }
+.hero--duo .lead { margin-bottom: 26px; }
+.hero-fig { position: relative; }
+
+/* ---------- the crew ---------- */
+
+.launchpad .ground, .farewell .ground { stroke: var(--line); stroke-width: 2; }
+
+.launchpad .sk-head, .launchpad .sk-body { fill: var(--blue); }
+
+/* arms are angled strokes reading as lifting. never a horizontal bar at
+   hip height pointed at anything, which is what these were first. */
+.launchpad .sk-arm, .farewell .sk-arm {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 9;
+  stroke-linecap: round;
+}
+
+/* a heave per part landing, then they settle and watch */
+.launchpad.run .mate {
+  animation:
+    heave 780ms ease-in-out calc(var(--i) * 260ms) 2,
+    bob 3.4s ease-in-out 2600ms infinite;
+}
+
+@keyframes heave {
+  0%, 100% { transform: translateY(0); }
+  45%      { transform: translateY(-7px); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+/* ---------- the pad and the gantry ---------- */
+
+.launchpad .pad { fill: var(--navy); opacity: 0.85; }
+
+.launchpad .gantry line {
+  stroke: var(--muted);
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0.45;
+}
+
+/* it pulls away before the engine lights, which is what sells "finished" */
+.launchpad.run .gantry { animation: gantryOut 700ms ease-in 1900ms forwards; }
+
+@keyframes gantryOut {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(56px); opacity: 0; }
+}
+
+/* ---------- the rocket, assembled a part at a time ---------- */
+
+.launchpad .r-body { fill: var(--navy); }
+.launchpad .r-nose, .launchpad .r-fin { fill: var(--blue); }
+.launchpad .r-band, .launchpad .r-window { fill: var(--bg); }
+
+.launchpad .part { opacity: 0; transform: translate(-190px, 26px); }
+
+.launchpad.run .part {
+  animation: partIn 620ms cubic-bezier(0.22, 0.7, 0.28, 1) forwards;
+  animation-delay: calc(var(--i) * 260ms);
+}
+
+@keyframes partIn {
+  from { opacity: 0; transform: translate(-190px, 26px); }
+  55%  { opacity: 1; }
+  to   { opacity: 1; transform: translate(0, 0); }
+}
+
+/* ---------- ignition and climb ---------- */
+
+.launchpad .flame { fill: var(--blue); opacity: 0; transform-origin: 420px 342px; }
+
+.launchpad .flame-core { fill: var(--bg); opacity: 0; transform-origin: 420px 344px; }
+
+.launchpad.run .flame,
+.launchpad.run .flame-core {
+  animation:
+    ignite 260ms ease-out 2500ms forwards,
+    flicker 200ms ease-in-out 2760ms infinite;
+}
+
+/* the core runs on its own beat so the exhaust never looks like one solid shape */
+.launchpad.run .flame-core { animation-delay: 2500ms, 2680ms; }
+
+@keyframes ignite { to { opacity: 0.95; } }
+
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1); }
+  50%      { transform: scaleY(0.78); }
+}
+
+/* the shudder on the pad is the anticipation beat. without it the rocket
+   just drifts upward and the whole sequence goes flat. */
+.launchpad.run .rocket-in {
+  animation:
+    shudder 90ms ease-in-out 2500ms 4,
+    drift 3.4s ease-in-out 4900ms infinite;
+}
+
+@keyframes shudder {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-1.6px); }
+  75%      { transform: translateX(1.6px); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+/* slow off the pad, then accelerating, the way it actually goes */
+.launchpad .rocket { transform: translateY(0); }
+.launchpad.run .rocket {
+  animation: liftoff 1900ms cubic-bezier(0.5, 0, 0.78, 0.6) 2900ms forwards;
+}
+
+@keyframes liftoff {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-150px); }
+}
+
+/* ---------- exhaust on the pad ---------- */
+
+.launchpad .smoke circle { fill: var(--muted); opacity: 0; }
+
+.launchpad.run .smoke circle {
+  animation: puff 1600ms ease-out forwards;
+  animation-delay: calc(2700ms + var(--i) * 90ms);
+}
+
+@keyframes puff {
+  0%   { opacity: 0;    transform: scale(0.4); }
+  30%  { opacity: 0.28; transform: scale(1); }
+  100% { opacity: 0;    transform: scale(1.9) translateY(-6px); }
+}
+
+/* ---------- the goodbye, on the navy fire-us block ---------- */
+
+.farewell { max-width: 380px; margin: 26px 0 4px; }
+.farewell .ground { stroke: rgba(255,255,255,0.22); }
+.farewell .stack rect { fill: #f2efe8; }
+.farewell .stack rect:nth-child(even) { fill: #c9d2e8; }
+.farewell .sk-head, .farewell .sk-body { fill: var(--blue); }
+.farewell .r-body { fill: #fff; }
+.farewell .r-nose, .farewell .r-fin { fill: var(--blue); }
+.farewell .flame { fill: var(--blue); }
+
+.farewell .trail {
+  fill: none;
+  stroke: rgba(255,255,255,0.34);
+  stroke-width: 2;
+  stroke-dasharray: 3 9;
+  stroke-linecap: round;
+}
+
+/* the systems keep running after the goodbye. this is the point of the block. */
+.farewell .pulse { fill: var(--blue); opacity: 0; }
+.farewell.run .pulse { animation: stillRunning 2s ease-in-out 900ms infinite; }
+
+@keyframes stillRunning {
+  0%, 100% { opacity: 0;   r: 5; }
+  40%      { opacity: 0.9; r: 7; }
+}
+
+.farewell .sk-arm { transform-origin: 224px 152px; }
+.farewell.run .sk-arm { animation: wave 620ms ease-in-out 400ms 3; }
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(-26deg); }
+}
+
+/* wave first, then go, and do not come back */
+.farewell.run .leaver {
+  animation: walkOff 1500ms cubic-bezier(0.5, 0, 0.75, 0) 2500ms forwards;
+}
+
+@keyframes walkOff {
+  from { transform: translateX(0);     opacity: 1; }
+  70%  { opacity: 1; }
+  to   { transform: translateX(150px); opacity: 0; }
+}
+
+/* ---------- reduced motion ----------
+   the global block kills every animation, so each resting state has to be
+   the finished picture rather than the starting one: rocket up, gantry
+   gone, crew on the ground. */
+
+@media (prefers-reduced-motion: reduce) {
+  .launchpad .part { opacity: 1 !important; transform: none !important; }
+  .launchpad .rocket { transform: translateY(-150px) !important; }
+  .launchpad .rocket-in { transform: none !important; }
+  .launchpad .flame { opacity: 0.95 !important; transform: none !important; }
+  .launchpad .flame-core { opacity: 0.95 !important; transform: none !important; }
+  .launchpad .gantry { opacity: 0 !important; }
+  .launchpad .smoke circle { opacity: 0 !important; }
+  .launchpad .mate { transform: none !important; }
+  .farewell .pulse { opacity: 0.9 !important; }
+  .farewell .leaver { transform: translateX(0) !important; opacity: 1 !important; }
+  .farewell .sk-arm { transform: rotate(-20deg) !important; }
+}
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 860px) {
+  .hero--duo { grid-template-columns: 1fr; gap: 26px; }
+  .hero--duo h1 { font-size: clamp(40px, 6.5vw, 60px); }
+  .hero-fig { max-width: 440px; }
+}
+
+@media (max-width: 560px) {
+  .hero-fig { max-width: 350px; }
+  .farewell { margin-top: 20px; }
+}
