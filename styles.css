@@ -2392,3 +2392,15 @@ mark {
   .hero-fig { max-width: 350px; }
   .farewell { margin-top: 20px; }
 }
+
+/* Touch target floor. Every "Book a strategy call" measured 42px against the
+   44px minimum in the quality floor, on the primary CTA of every page. Set as a
+   min-height rather than more padding so it holds whatever the line-height is. */
+@media (max-width: 900px) {
+  .btn, .btn-big {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
