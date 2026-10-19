@@ -1,332 +1,336 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ScaleUp Sidekicks | Better marketing starts with the right answer</title>
-<meta name="description" content="A marketing consultancy. We write a plan with the metrics we expect to move, then put the right answer in place: automation, contractors or a new hire.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScaleUp Sidekicks | Websites for the doers, marketing help for teams scaling</title>
+<meta name="description" content="ScaleUp Sidekicks. You're the hero. We're the sidekicks. Websites for the doers, and marketing help for teams that are scaling.">
+<link rel="canonical" href="https://scaleupsidekicks.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ScaleUp Sidekicks | Better marketing starts with the right answer">
-<meta property="og:description" content="A marketing consultancy. We write a plan with the metrics we expect to move, then put the right answer in place: automation, contractors or a new hire.">
-<meta property="og:url" content="https://scaleupsidekicks.com/index.html">
+<meta property="og:title" content="ScaleUp Sidekicks">
+<meta property="og:description" content="ScaleUp Sidekicks. You're the hero. We're the sidekicks. Websites for the doers, and marketing help for teams that are scaling.">
+<meta property="og:url" content="https://scaleupsidekicks.com/">
 <meta name="twitter:card" content="summary">
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=45">
-<script src="script.js?v=45" defer></script>
-</head>
-<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap">
+<style>
+/* Layout: a black wall in the spirit of an illustrator's portfolio. Tiny text nav whose Starting/Scaling tabs filter the page, one plain sentence about Joe, then the work. Gold only lives in the logo and on things you can tap. */
+:root{
+  --ink:#000;
+  --raise:#0e0d0c;
+  --line:#262320;
+  --paper:#f4f1ec;
+  --mute:#8d857c;
+  --gold:#ffc410;
+  --ember:#ff962e;
+  --f:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--f);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.small{font-size:14px;color:var(--mute)}
 
-<header class="nav">
-  <a class="wordmark" href="index.html">ScaleUp Sidekicks</a>
-  <nav class="nav-links" aria-label="Main">
-    <a href="how-it-works.html">How it works</a>
-    <a href="systems.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="proof.html">Proof</a>
-    <a href="about.html">About</a>
-    <a class="btn" href="book.html">Book a strategy call</a>
-  </nav>
+/* nav: plain words, like a sketchbook index */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px;font-size:15px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700}
+.brand svg{width:16px;height:26px;flex:none}
+.tabs{display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.tabs a,.tabs button{font:inherit;color:var(--mute);background:none;border:0;padding:4px 8px;cursor:pointer;text-decoration:none;border-radius:20px}
+.tabs button[aria-pressed="true"]{color:var(--ink);background:var(--paper)}
+.tabs button:hover{color:var(--paper)}
+.tabs button[aria-pressed="true"]:hover{color:var(--ink)}
+.tabs .sep{color:var(--line);padding-inline:4px}
+@media (max-width:520px){.brand span{display:none}}
+/* Touch area only. The tiny nav is deliberate, so the visible size is untouched;
+   an invisible 44px band is centred on each tab so a thumb can land on it. */
+.tabs a,.tabs button{position:relative}
+.tabs a::after,.tabs button::after{content:"";position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:44px}
+
+/* intro */
+.intro{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end;padding-block:clamp(28px,6vw,72px) clamp(28px,4vw,48px)}
+@media (max-width:700px){.intro{grid-template-columns:1fr;align-items:start}}
+.mark{width:clamp(110px,16vw,190px)}
+.mark svg{width:100%;height:auto;overflow:visible;display:block}
+.s-stroke{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.1s cubic-bezier(.7,0,.2,1) .15s forwards}
+.arrow{opacity:0;transform:translate(-26px,26px);animation:launch .6s cubic-bezier(.2,1.4,.4,1) 1.15s forwards}
+.float{animation:float 5s ease-in-out 2s infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes launch{to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translate(4px,-6px)}}
+h1{font-weight:900;font-size:clamp(34px,5.4vw,72px);line-height:1.02;letter-spacing:-.025em;margin:0;max-width:17ch;text-wrap:balance}
+h1 em{font-style:italic;font-weight:400}
+.intro p{margin:16px 0 0;max-width:48ch;color:var(--mute);font-size:clamp(17px,1.5vw,19px)}
+.reach{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:22px}
+.pill{display:inline-block;background:var(--gold);color:var(--ink);font-weight:700;text-decoration:none;padding:10px 18px;border-radius:30px}
+.pill:hover{color:var(--ink);background:var(--paper)}
+.num{font-variant-numeric:tabular-nums;user-select:all;color:var(--paper)}
+
+/* the wall */
+.wall{columns:3 280px;column-gap:12px;padding-bottom:12px}
+.tile{break-inside:avoid;margin:0 0 12px;display:block;text-decoration:none;position:relative}
+.tile .face{transition:transform .3s cubic-bezier(.2,.9,.3,1.2)}
+.tile:hover .face{transform:rotate(-1.2deg) scale(1.015)}
+.tile:hover{color:inherit}
+.tile figcaption{font-size:13px;color:var(--mute);padding:7px 2px 0;display:flex;justify-content:space-between}
+.mini{padding:16px;display:flex;flex-direction:column;gap:12px;border-radius:3px}
+.mini .bar{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700}
+.mini .bar i{display:flex;gap:4px}.mini .bar i b{width:14px;height:2px;background:currentColor;opacity:.45}
+.mini .h{font-weight:900;letter-spacing:-.02em;line-height:1}
+.mini .btn{align-self:flex-start;font-size:11px;font-weight:700;padding:6px 10px;border-radius:20px}
+.mini .ph{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.mini .ph b{aspect-ratio:1;background:currentColor;opacity:.16;border-radius:2px}
+.c-gold{background:linear-gradient(170deg,var(--gold),var(--ember));color:var(--ink)}.c-gold .btn{background:var(--ink);color:var(--gold)}
+.c-paper{background:var(--paper);color:var(--ink)}.c-paper .btn{background:var(--ember);color:var(--ink)}
+.c-dark{background:#1c1a17;color:var(--paper)}.c-dark .btn{background:var(--gold);color:var(--ink)}
+.c-ember{background:var(--ember);color:var(--ink)}.c-ember .btn{background:var(--ink);color:var(--paper)}
+.c-blue{background:#23364a;color:#eaf1f7}.c-blue .btn{background:#eaf1f7;color:#23364a}
+.open{border:1px dashed var(--line);border-radius:3px;padding:44px 20px;text-align:center}
+.open strong{display:block;font-size:30px;font-weight:900;letter-spacing:-.02em;color:var(--gold);line-height:1.05}
+.open span{color:var(--mute);font-size:15px}
+
+/* text blocks */
+.block{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(16px,4vw,56px);padding-block:clamp(36px,5vw,64px);border-top:1px solid var(--line)}
+@media (max-width:760px){.block{grid-template-columns:1fr}}
+.block h2{font-size:15px;font-weight:500;color:var(--mute);margin:4px 0 0}
+.block .body{max-width:62ch}
+.block .body p{margin:0 0 14px}
+.big{font-weight:900;font-size:clamp(30px,4.4vw,54px);line-height:1.02;letter-spacing:-.025em;margin:0 0 14px;text-wrap:balance}
+.big .g{color:var(--gold)}
+.note{font-size:14px;color:var(--mute);border-left:2px solid var(--gold);padding-left:12px;margin:18px 0 0}
+ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:0}
+ul.plain li{padding-block:11px;border-bottom:1px solid var(--line);display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
+ul.plain li:first-child{border-top:1px solid var(--line)}
+ul.plain li span:last-child{color:var(--mute)}
+
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media (max-width:760px){.facts{grid-template-columns:1fr}}
+.fact b{display:block;font-size:clamp(48px,6vw,76px);font-weight:900;letter-spacing:-.04em;line-height:.95;color:var(--gold);font-variant-numeric:tabular-nums}
+.fact p{margin:8px 0 6px}
+.fact a{font-size:13px;color:var(--mute)}
+
+.later{color:var(--mute)}
+.later b{color:var(--paper);font-weight:500}
+
+footer{border-top:1px solid var(--line);padding-block:26px 34px;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .s-stroke{stroke-dashoffset:0}.arrow{opacity:1;transform:none}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="210" x2="0" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffc410"/><stop offset="1" stop-color="#ff962e"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="#top">
+        <svg viewBox="215 150 205 345" aria-hidden="true"><path d="M318 222 L248 272 L372 374 L236 478" fill="none" stroke="url(#sg)" stroke-width="44"/><path d="M320 180 L404 160 L370 242" fill="none" stroke="#ffc410" stroke-width="14"/></svg>
+        <span>ScaleUp Sidekicks</span>
+      </a>
+      <div class="tabs">
+        <button type="button" id="tab-starting" data-view="starting" aria-pressed="true">Starting</button>
+        <button type="button" id="tab-scaling" data-view="scaling" aria-pressed="false">Scaling</button>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="#info">Info</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
 </header>
 
-<main class="wrap">
-
-  <section class="hero hero--duo">
-    <div class="hero-copy">
-      <p class="kicker">Marketing consulting for established firms</p>
-      <h1>Better marketing starts with the right answer.</h1>
-      <p class="lead">You want marketing that moves the business. But every fix you're offered comes from someone selling that fix. We start with your strategy, write a plan with the numbers we expect to move, then put the right answer in place: automation, contractors or a new hire.</p>
-      <div class="hero-actions">
-        <a class="btn btn-big" href="book.html">Book a strategy call</a>
-        <a class="textlink" href="how-it-works.html">See how it works</a>
-      </div>
-      <p class="hero-sub">Fifteen minutes, free, and useful either way.</p>
-    </div>
-
-    <div class="hero-fig">
-      <svg class="pipeline-svg launchpad" viewBox="0 0 560 400" role="img" aria-labelledby="duoTitle duoDesc">
-        <title id="duoTitle">A crew building a rocket, and the rocket launching</title>
-        <desc id="duoDesc">Three small figures raise parts into place until a rocket is assembled. The gantry pulls away, the engine lights, and the rocket climbs while the crew stays on the ground with their arms up.</desc>
-
-        <line class="ground" x1="30" y1="356" x2="530" y2="356"></line>
-
-        <g class="crew">
-          <g class="mate" style="--i:0">
-            <path class="sk-arm" d="M 149 314 L 165 295"></path>
-            <path class="sk-arm" d="M 123 314 L 107 295"></path>
-            <circle class="sk-head" cx="136" cy="294" r="13"></circle>
-            <rect class="sk-body" x="123" y="306" width="26" height="50" rx="12"></rect>
-          </g>
-          <g class="mate" style="--i:1">
-            <path class="sk-arm" d="M 203 314 L 219 295"></path>
-            <path class="sk-arm" d="M 177 314 L 161 295"></path>
-            <circle class="sk-head" cx="190" cy="294" r="13"></circle>
-            <rect class="sk-body" x="177" y="306" width="26" height="50" rx="12"></rect>
-          </g>
-          <g class="mate" style="--i:2">
-            <path class="sk-arm" d="M 257 314 L 273 295"></path>
-            <path class="sk-arm" d="M 231 314 L 215 295"></path>
-            <circle class="sk-head" cx="244" cy="294" r="13"></circle>
-            <rect class="sk-body" x="231" y="306" width="26" height="50" rx="12"></rect>
-          </g>
-        </g>
-
-        <rect class="pad" x="366" y="348" width="112" height="10" rx="3"></rect>
-
-        <g class="gantry" aria-hidden="true">
-          <line x1="490" y1="194" x2="490" y2="352"></line>
-          <line x1="452" y1="232" x2="490" y2="232"></line>
-          <line x1="452" y1="292" x2="490" y2="292"></line>
-        </g>
-
-        <g class="smoke" aria-hidden="true">
-          <circle style="--i:0" cx="390" cy="344" r="15"></circle>
-          <circle style="--i:1" cx="450" cy="344" r="13"></circle>
-          <circle style="--i:2" cx="420" cy="350" r="17"></circle>
-        </g>
-
-        <g class="rocket">
-          <g class="rocket-in">
-            <path class="flame" d="M 399 342 Q 420 436 441 342 Q 420 364 399 342 Z"></path>
-            <path class="flame-core" d="M 409 344 Q 420 400 431 344 Q 420 358 409 344 Z"></path>
-
-            <g class="part" style="--i:0">
-              <rect class="r-body" x="396" y="278" width="48" height="70" rx="8"></rect>
-            </g>
-            <g class="part" style="--i:1">
-              <path class="r-fin" d="M 396 306 L 372 348 L 396 348 Z"></path>
-              <path class="r-fin" d="M 444 306 L 468 348 L 444 348 Z"></path>
-            </g>
-            <g class="part" style="--i:2">
-              <rect class="r-body" x="396" y="208" width="48" height="72" rx="8"></rect>
-            </g>
-            <g class="part" style="--i:3">
-              <rect class="r-band" x="396" y="286" width="48" height="9"></rect>
-              <circle class="r-window" cx="420" cy="243" r="11"></circle>
-            </g>
-            <g class="part" style="--i:4">
-              <path class="r-nose" d="M 396 211 L 420 158 L 444 211 Z"></path>
-            </g>
-          </g>
+<!-- ================= STARTING ================= -->
+<main id="view-starting">
+  <div class="wrap intro" id="top">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="215 150 205 345">
+        <g class="float">
+          <path class="s-stroke" d="M318 222 L248 272 L372 374 L236 478" fill="none" stroke="url(#sg)" stroke-width="44"/>
+          <g class="arrow"><path d="M320 180 L404 160 L370 242" fill="none" stroke="#ffc410" stroke-width="10"/><path d="M320 180 L336 196 M370 242 L354 226" stroke="#ffc410" stroke-width="10"/></g>
         </g>
       </svg>
     </div>
-  </section>
+    <div>
+      <h1>You're the hero. <em>We're the sidekicks.</em></h1>
+      <p>We build websites for the doers, so you can keep doing more of what you're great at. Contractors, cooks, coaches, shops and crews, wherever you work. Live in about a week.</p>
+      <div class="reach">
+        <a class="pill" href="sms:+16146238379">Text us</a>
+        <span class="small">or text <span class="num">614-623-8379</span></span>
+      </div>
+    </div>
+  </div>
 
-  <section class="block">
-    <div class="section-head">
-      <h2>Everyone's diagnosis happens to be their product</h2>
-      <p>Every adviser you could call is also selling one specific fix, so the answer is settled before anyone looks at your business.</p>
+  <div class="wrap">
+    <div class="wall" aria-label="Sample sites">
+      <div class="tile"><div class="face open"><strong>Your site here</strong><span>First client going live this month</span></div></div>
+      <figure class="tile" style="margin:0 0 12px"><div class="face mini c-gold"><div class="bar">RIDGE LINE ROOFING<i><b></b><b></b><b></b></i></div><div class="h" style="font-size:36px">Roof leak? We can be out today.</div><span class="btn">Free estimate</span><div class="ph"><b></b><b></b><b></b></div></div><figcaption><span>Roofing</span><span>sample</span></figcaption></figure>
+      <figure class="tile" style="margin:0 0 12px"><div class="face mini c-dark"><div class="bar">HALF MOON BAKERY<i><b></b><b></b><b></b></i></div><div class="h" style="font-size:34px">Sourdough out of the oven by 7.</div><div class="ph"><b></b><b></b><b></b></div><span class="btn">Order ahead</span></div><figcaption><span>Food</span><span>sample</span></figcaption></figure>
+      <figure class="tile" style="margin:0 0 12px"><div class="face mini c-paper"><div class="bar">FLATWORK CO.<i><b></b><b></b><b></b></i></div><div class="h" style="font-size:42px">Driveways and patios, poured right.</div><div class="ph"><b></b><b></b><b></b><b></b><b></b><b></b></div><span class="btn">See the work</span></div><figcaption><span>Concrete</span><span>sample</span></figcaption></figure>
+      <figure class="tile" style="margin:0 0 12px"><div class="face mini c-blue"><div class="bar">IRON HOUR COACHING<i><b></b><b></b><b></b></i></div><div class="h" style="font-size:30px">Strength training for people with real jobs.</div><span class="btn">Book a free session</span></div><figcaption><span>Fitness</span><span>sample</span></figcaption></figure>
+      <figure class="tile" style="margin:0 0 12px"><div class="face mini c-ember"><div class="bar">LIVE WIRE ELECTRIC<i><b></b><b></b><b></b></i></div><div class="h" style="font-size:32px">Licensed electricians. Panels, wiring, EV chargers.</div><span class="btn">Get a quote</span></div><figcaption><span>Electrical</span><span>sample</span></figcaption></figure>
+      <figure class="tile" style="margin:0 0 12px"><div class="face mini c-dark"><div class="bar">SHARP LINE BARBERS<i><b></b><b></b><b></b></i></div><div class="h" style="font-size:38px">Walk-ins welcome. Chairs open till 8.</div><div class="ph"><b></b><b></b><b></b></div><span class="btn">Book a chair</span></div><figcaption><span>Barbershop</span><span>sample</span></figcaption></figure>
+      <div class="tile"><div class="face open"><strong>Your business</strong><span>Not on the wall yet? Same build, your work.</span></div></div>
     </div>
+  </div>
 
-    <div class="pains">
-    <div class="pain" data-animate style="--d:0">
-      <h3>Ask an agency</h3>
-      <p>The answer is a retainer, whatever the question was.</p>
-    </div>
-    <div class="pain" data-animate style="--d:1">
-      <h3>Ask a software vendor</h3>
-      <p>The answer is a license, and your team learns one more tool.</p>
-    </div>
-    <div class="pain" data-animate style="--d:2">
-      <h3>Ask a recruiter</h3>
-      <p>The answer is a hire, and the fee lands the day they start.</p>
-    </div>
-    <div class="pain" data-animate style="--d:3">
-      <h3>Ask an AI consultant</h3>
-      <p>The answer is AI, even for work that needs a person.</p>
-    </div>
-    </div>
-  </section>
-
-  <section class="guide" data-animate>
-    <p class="empathy">We start with your strategy and work backward to the answer.</p>
-    <p class="answer">The answer might be automation, contractors or a full-time hire, and most firms need a mix. You see the reasoning and the cost behind each one before you spend a dollar on any of them. Whatever we build or find is yours.</p>
-    <a class="textlink" href="how-it-works.html">See how it works</a>
-  </section>
-
-  <section class="block" id="plan">
-    <div class="offer" data-animate>
-      <div>
-        <h2>A marketing plan you can hold us to</h2>
-        <p class="offer-lead">Ten business days. We map your marketing end to end and hand you a plan with the metrics we expect to move, plus a way to measure them yourself.</p>
-        <ul class="offer-facts">
-          <li><span class="k">Duration</span><span class="v">10 business days</span></li>
-          <li><span class="k">Your time</span><span class="v">2 hours total</span></li>
-          <li><span class="k">What we need</span><span class="v">View-only access</span></li>
-          <li><span class="k">You get</span><span class="v">A plan with target metrics</span></li>
-          <li><span class="k">Plus</span><span class="v">A costed recommendation</span></li>
+  <div class="wrap">
+    <section class="block" aria-labelledby="price-h">
+      <h2 id="price-h">Price</h2>
+      <div class="body">
+        <p class="big">$149 to start. <span class="g">$50 a month</span> after that.</p>
+        <ul class="plain">
+          <li><span>Up to five pages</span><span>Home, services, about, photos, contact</span></li>
+          <li><span>Tap to call on every page</span><span>Built for phones first</span></li>
+          <li><span>A quote request form</span><span>Lands in your texts or email</span></li>
+          <li><span>Your own domain</span><span>yourbusiness.com, owned by you</span></li>
+          <li><span>Hosting and small changes</span><span>Text us a photo, it's up</span></li>
+          <li><span>Month to month</span><span>Leave anytime, the site goes with you</span></li>
         </ul>
+        <p class="note">These are starting prices. Your final quote depends on the scope of the project, like extra pages, copywriting, a booking calendar or moving an old site. You get the number in writing before any work starts.</p>
       </div>
-      <div class="offer-price">
-        <p class="amount">$4,500</p>
-        <p class="credit">The Marketing Assessment. Credits in full against a build.</p>
-        <a class="btn btn-big" href="book.html">Book a strategy call</a>
-        <p class="fine">Every engagement starts with a free call.</p>
+    </section>
+
+    <section class="block" aria-labelledby="why-h">
+      <h2 id="why-h">Why bother</h2>
+      <div class="body" style="max-width:none">
+        <div class="facts">
+          <div class="fact"><b>98%</b><p>of people read online reviews when they're looking for a local business. They look you up before they call.</p><a href="https://www.brightlocal.com/research/local-consumer-review-survey/2023/" target="_blank" rel="noopener">BrightLocal, 2023 survey of 1,117 US consumers</a></div>
+          <div class="fact"><b>84%</b><p>say a business with a website is more credible than one with only a social media page.</p><a href="https://blog.verisign.com/getting-online/verisign-2015-online-survey-97-percent-of-smbs-would-recommend-having-a-website-to-other-smbs/" target="_blank" rel="noopener">Verisign, survey of 787 US consumers</a></div>
+          <div class="fact"><b>1 in 6</b><p>small businesses still has no website. Having a good one already puts you ahead of them.</p><a href="https://www.businesswire.com/news/home/20250821848152/en/Clutch-Report-No-Code-Tools-Fuel-Website-Growth-Yet-17-of-Small-Businesses-are-Still-Offline" target="_blank" rel="noopener">Clutch, 2025</a></div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="own" style="margin-top: 30px;">
-      <div class="own-item" data-animate style="--d:0"><strong>Where your marketing stands</strong><span>Every channel, what it costs, and what it's producing today.</span></div>
-      <div class="own-item" data-animate style="--d:1"><strong>The metrics we expect to move</strong><span>Named up front, each with a starting baseline.</span></div>
-      <div class="own-item" data-animate style="--d:2"><strong>How you'll measure them</strong><span>In tools you already use, so you can check the numbers yourself.</span></div>
-      <div class="own-item" data-animate style="--d:3"><strong>The recommendation</strong><span>Automation, contractors or hires, with the cost of each.</span></div>
-    </div>
-  </section>
-
-  <section class="block" id="paths">
-    <div class="section-head">
-      <p class="kicker">What the plan recommends</p>
-      <h2>Three ways to get the work done</h2>
-      <p>Most firms get a mix. Your plan says which work goes where, and why.</p>
-    </div>
-    <div class="pricing-split three">
-      <div class="step-cost" data-animate style="--d:0">
-        <span class="when">Automate it</span>
-        <p class="amt">$12k to $18k</p>
-        <p>Repeatable work a system should do. We build it inside your accounts, documented, and it's yours from day one.</p>
-        <p class="note">Optional upkeep afterwards, $1,000 a month.</p>
+    <section class="block" aria-labelledby="how-h">
+      <h2 id="how-h">How it goes</h2>
+      <div class="body">
+        <p class="big">About 30 minutes of your time, total.</p>
+        <p>Text us your business name, what you do and where you work. Send a handful of photos of your work straight from your camera roll. In about five days we send you a link to look over. Tell us what to change, and a couple of days later it's live on your own domain.</p>
+        <p class="later"><b>When you're ready to grow,</b> the same sidekicks can take on more of your marketing. Check out <a href="#scaling" data-view-link="scaling">Scaling</a>.</p>
       </div>
-      <div class="step-cost build" data-animate style="--d:1">
-        <span class="when">Outsource it</span>
-        <p class="amt">Your own crew</p>
-        <p>Skilled work you need on demand. We find vetted contractors, set them up with your plan's briefs, and they work with you directly.</p>
-        <p class="note">Scoped in your plan.</p>
-      </div>
-      <div class="step-cost" data-animate style="--d:2">
-        <span class="when">Hire for it</span>
-        <p class="amt">The right person</p>
-        <p>Work that belongs inside your company. We help define the role and find the person, and we find contractors to keep the work moving until they start.</p>
-        <p class="note">Scoped in your plan.</p>
-      </div>
-    </div>
-    <p class="figure-note" style="margin-top: 22px;">Every path ends with a handover. <a class="textlink" href="systems.html">See each one in detail</a>.</p>
-  </section>
-
-  <section class="block" id="own">
-    <div class="section-head">
-      <p class="kicker">Whatever we build or find is yours</p>
-      <h2>You own all of it, from day one</h2>
-      <p>The systems, the contractor relationships and the people you hire all belong to you. We set them up, hand them over and step back.</p>
-    </div>
-    <div class="own">
-      <div class="own-item" data-animate style="--d:0"><strong>The systems</strong><span>Built in your accounts, documented, yours to change.</span></div>
-      <div class="own-item" data-animate style="--d:1"><strong>Your crew</strong><span>Contractors who work with you directly.</span></div>
-      <div class="own-item" data-animate style="--d:2"><strong>Your hires</strong><span>On your payroll, with a playbook to start fast.</span></div>
-      <div class="own-item" data-animate style="--d:3"><strong>The plan</strong><span>Yours to act on, whoever carries it out.</span></div>
-    </div>
-
-    <div class="deal" data-animate style="margin-top: 30px;">
-      <h2>How every engagement ends</h2>
-      <p>We record a walkthrough, hand over the systems, the contacts and the playbook, and step back. Your team runs it from there, and the numbers in your plan tell you how it's going.</p>
-      <svg class="pipeline-svg farewell" viewBox="0 0 380 200" role="img" aria-labelledby="byeTitle byeDesc">
-        <title id="byeTitle">The rocket gone, the systems still running, the sidekick leaving</title>
-        <desc id="byeDesc">A rocket climbs away at the top of the frame. The stacked systems keep pulsing on the ground while the smaller figure waves and walks off.</desc>
-
-        <line class="ground" x1="20" y1="176" x2="360" y2="176"></line>
-
-        <g class="stack">
-          <rect x="44" y="160" width="110" height="12" rx="4"></rect>
-          <rect x="44" y="144" width="110" height="12" rx="4"></rect>
-          <rect x="44" y="128" width="110" height="12" rx="4"></rect>
-        </g>
-        <circle class="pulse" cx="99" cy="134" r="5"></circle>
-
-        <path class="trail" d="M 318 60 C 312 96 302 124 296 152"></path>
-
-        <g class="mini-rocket" aria-hidden="true">
-          <path class="flame" d="M 314 52 Q 322 78 330 52 Q 322 60 314 52 Z"></path>
-          <path class="r-fin" d="M 314 40 L 306 54 L 314 54 Z"></path>
-          <path class="r-fin" d="M 330 40 L 338 54 L 330 54 Z"></path>
-          <rect class="r-body" x="314" y="20" width="16" height="34" rx="5"></rect>
-          <path class="r-nose" d="M 314 22 L 322 2 L 330 22 Z"></path>
-        </g>
-
-        <g class="leaver">
-          <path class="sk-arm" d="M 222 150 L 235 131"></path>
-          <circle class="sk-head" cx="208" cy="126" r="12"></circle>
-          <rect class="sk-body" x="196" y="137" width="24" height="39" rx="11"></rect>
-        </g>
-      </svg>
-      <p class="fire-line">The work is yours. So is the credit.</p>
-    </div>
-  </section>
-
-  <section class="block" id="proof">
-    <div class="section-head">
-      <p class="kicker">Proof</p>
-      <h2>Ten years of finding the right answer</h2>
-      <p>Joe has been the freelancer, the agency and the client, so he knows what every option looks like from the inside.</p>
-    </div>
-    <div class="track">
-      <div class="track-item" data-animate style="--d:0"><b>10+ yrs</b><span>in marketing, agency side and in-house</span></div>
-      <div class="track-item" data-animate style="--d:1"><b>200%</b><span>increase in sales-qualified leads on a $30k monthly budget</span></div>
-      <div class="track-item" data-animate style="--d:2"><b>30</b><span>client programs run at agency scale</span></div>
-      <div class="track-item" data-animate style="--d:3"><b>6 and 7 figure</b><span>brands scaled, as marketer and systems thinker</span></div>
-    </div>
-
-    <div class="cases" style="margin-top: 30px;">
-      <div class="case" data-animate>
-        <div class="case-head"><span class="case-num">01</span><span class="case-qual">Built on the model</span></div>
-        <h3>Survivorz, Joe's own business</h3>
-        <p>Built and run on sourced talent working inside systems Joe designed. It's live, he owns it outright, and every part of it is open to inspect.</p>
-        <p class="case-settles"><b>One business you can open</b> beats seven testimonials. <a class="textlink" href="https://survivorz.co" target="_blank" rel="noopener">survivorz.co</a></p>
-      </div>
-    </div>
-    <p class="figure-note" style="margin-top: 22px;"><a class="textlink" href="proof.html">See four earlier builds with the numbers attached</a>, or <a class="textlink" href="about.html">read Joe's full background</a>.</p>
-    <p style="margin-top: 20px;"><a class="btn" href="book.html">Book a strategy call</a></p>
-  </section>
-
-  <section class="block" id="objections">
-    <div class="section-head">
-      <h2>The questions that come up</h2>
-    </div>
-    <div class="objs">
-      <div class="obj" data-animate style="--d:0">
-        <h3>How will I know it's working?</h3>
-        <p>Your plan names the metrics we expect to move, each with a starting baseline and a way to measure it in tools you already use. You check the numbers yourself, whenever you like.</p>
-      </div>
-      <div class="obj" data-animate style="--d:1">
-        <h3>Will this replace my team?</h3>
-        <p>It adds to them. The plan decides what your team should keep and finds a system or a person for the rest. Your team gets the credit for what ships.</p>
-      </div>
-      <div class="obj" data-animate style="--d:2">
-        <h3>What if we already have a strategy?</h3>
-        <p>Then the Assessment puts it to the test. Some strategies need a new direction and some just need the right people behind them. Either way you'll know which, with the numbers to back it.</p>
-      </div>
-      <div class="obj" data-animate style="--d:3">
-        <h3>What if the answer is a hire?</h3>
-        <p>Then we help you make a good one. We define the role, help find the person, and find contractors to keep the work moving while you hire.</p>
-      </div>
-      <div class="obj" data-animate style="--d:4">
-        <h3>Who owns what you build and who you find?</h3>
-        <p>You do. Systems live in your accounts, contractors work with you directly, and hires go on your payroll. When we're done, we hand it all over.</p>
-      </div>
-      <div class="obj" data-animate style="--d:5">
-        <h3>Why not hire a big consultancy?</h3>
-        <p>You could, and you'd get a strategy deck. We write the plan and then put it in place, at a size and a price built for firms like yours.</p>
-      </div>
-    </div>
-  </section>
-
+    </section>
+  </div>
 </main>
 
-<section class="cta-band">
-  <h2>Book a strategy call</h2>
-  <p>Fifteen minutes on where you want your marketing to be and what you've tried so far. Free, and useful either way.</p>
-  <div class="cta-actions">
-    <a class="btn btn-big" href="book.html">Book a strategy call</a>
-    <a class="btn btn-big btn-ghost" href="sample.html">Or see a free Sample</a>
+<!-- ================= SCALING ================= -->
+<main id="view-scaling" hidden>
+  <div class="wrap intro">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="215 150 205 345">
+        <g class="float">
+          <path class="s-stroke" d="M318 222 L248 272 L372 374 L236 478" fill="none" stroke="url(#sg)" stroke-width="44"/>
+          <g class="arrow"><path d="M320 180 L404 160 L370 242" fill="none" stroke="#ffc410" stroke-width="10"/><path d="M320 180 L336 196 M370 242 L354 226" stroke="#ffc410" stroke-width="10"/></g>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <h1>We help marketing teams decide what to <em>build, buy or hire.</em></h1>
+      <p>For established firms whose marketing has outgrown guesswork. You get a plan with the numbers we expect to move, then the right fix put in place.</p>
+      <div class="reach">
+        <a class="pill" href="https://calendly.com/joe789/ai-workflow-review" target="_blank" rel="noopener">Book a 15 minute call</a>
+        <span class="small">Free, and useful either way. Or text <span class="num">614-623-8379</span></span>
+      </div>
+    </div>
   </div>
-</section>
 
-<footer class="foot">
-  <span>&copy; 2026 ScaleUp Sidekicks</span>
-  <a class="textlink" href="mailto:hello@scaleupsidekicks.com">hello@scaleupsidekicks.com</a>
-  <span>Easy to leave. Kept anyway.</span>
+  <div class="wrap">
+    <section class="block" aria-labelledby="prob-h">
+      <h2 id="prob-h">The problem</h2>
+      <div class="body">
+        <p class="big">Everyone you could call is selling one fix.</p>
+        <ul class="plain">
+          <li><span>Ask an agency</span><span>You need a retainer</span></li>
+          <li><span>Ask a software vendor</span><span>You need a license</span></li>
+          <li><span>Ask a recruiter</span><span>You need a hire</span></li>
+          <li><span>Ask an AI consultant</span><span>You need AI</span></li>
+        </ul>
+        <p style="margin-top:18px">We start with your strategy and work backward. Most firms end up with a mix of automation, contractors and people, and you see the cost of each before spending a dollar.</p>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="assess-h">
+      <h2 id="assess-h">Where it starts</h2>
+      <div class="body">
+        <p class="big">A 15 minute call. <span class="g">That's it.</span></p>
+        <p>Tell us where your marketing is now and where you want it to be. We'll tell you what we'd look at first and whether we're the right fit. If we are, you get a plan that covers:</p>
+        <ul class="plain">
+          <li><span>Where your marketing stands</span><span>Every channel, cost and output</span></li>
+          <li><span>The metrics we expect to move</span><span>Each with a baseline</span></li>
+          <li><span>How you'll measure them</span><span>In tools you already use</span></li>
+          <li><span>The recommendation</span><span>Automate, outsource or hire</span></li>
+        </ul>
+        <div class="reach">
+          <a class="pill" href="https://calendly.com/joe789/ai-workflow-review" target="_blank" rel="noopener">Text us to book a call</a>
+          <span class="small"><span class="num">614-623-8379</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="rec-h">
+      <h2 id="rec-h">Track record</h2>
+      <div class="body" style="max-width:none">
+        <div class="facts">
+          <div class="fact"><b>200%</b><p>more marketing qualified leads on a $30k monthly budget at a SaaS company.</p></div>
+          <div class="fact"><b>10 → 25</b><p>agency clients, grown on a content system our founder designed and ran.</p></div>
+          <div class="fact"><b>30+</b><p>client programs run across PR and digital at agency scale.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ================= SHARED ================= -->
+<div class="wrap">
+  <section class="block" id="info" aria-labelledby="info-h">
+    <h2 id="info-h">Info</h2>
+    <div class="body">
+      <p class="big">Every hero needs a sidekick.</p>
+      <p>The people who make things, fix things and serve people are great at their work. Marketing shouldn't pull them away from it. We handle the website and the marketing behind it so you can stay focused on the job.</p>
+      <p>ScaleUp Sidekicks was founded by Joe Singh, who has spent ten years in marketing as the freelancer, the agency and the client, most recently leading web, email, social and PR for a global science organization.</p>
+      <p class="small">Based in Columbus, Ohio. Working with businesses anywhere.</p>
+    </div>
+  </section>
+
+  <section class="block" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Contact</h2>
+    <div class="body">
+      <p class="big" style="margin-bottom:8px">Need anything? Just text.</p>
+      <p class="big" style="margin-bottom:14px"><a class="num" href="sms:+16146238379" style="text-decoration:none;color:var(--gold)">614-623-8379</a></p>
+      <p>Questions, quotes, a photo you want on your site, or booking a call. Text is the fastest way to reach us.</p>
+      <p class="small">Prefer email? <span class="num">hello@scaleupsidekicks.com</span></p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 ScaleUp Sidekicks. Sidekicks for the doers.</span>
+    <a href="#top">↑ Head back up</a>
+  </div>
 </footer>
 
-</body>
-</html>
+<script>
+(function(){
+  var views={starting:document.getElementById('view-starting'),scaling:document.getElementById('view-scaling')};
+  var btns=document.querySelectorAll('.tabs button[data-view]');
+  function show(v,scroll){
+    Object.keys(views).forEach(function(k){views[k].hidden=(k!==v)});
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.view===v))});
+    if(scroll)window.scrollTo(0,0);
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.view,true)})});
+  document.querySelectorAll('[data-view-link]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();show(a.dataset.viewLink,true)})});
+  show(location.hash==='#scaling'?'scaling':'starting',false);
+})();
+</script>
